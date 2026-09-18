@@ -390,7 +390,7 @@ public void sendKYCSubmittedEmail(
             Thank you for choosing <b>Enterprise Banking System</b>.
         </p>
         """
-        .formatted(documentType);
+        .formatted(escapeHtml(documentType));
 
     String html = EmailTemplateBuilder.buildEmail(
             "KYC Submitted Successfully",
@@ -458,8 +458,8 @@ public void sendKYCRejectedEmail(
         </p>
         """
         .formatted(
-                documentType,
-                rejectionReason
+         escapeHtml(documentType),
+         escapeHtml(rejectionReason)
         );
 
     String html = EmailTemplateBuilder.buildEmail(
@@ -526,7 +526,7 @@ public void sendKYCVerifiedEmail(
             Thank you for choosing <b>Enterprise Banking System</b>.
         </p>
         """
-        .formatted(documentType);
+        .formatted(escapeHtml(documentType));
 
     String html = EmailTemplateBuilder.buildEmail(
             "KYC Verified Successfully",
@@ -573,7 +573,7 @@ public void sendKYCVerifiedEmail(
             If you do not recognize this activity, please change your password immediately
             and contact Enterprise Banking Support.
             </p>
-            """.formatted(loginTime, ipAddress);
+            """.formatted(escapeHtml(loginTime), escapeHtml(ipAddress));
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Login Alert",
@@ -721,7 +721,7 @@ public void sendKYCVerifiedEmail(
 
             <p>Your transaction has been processed successfully.</p>
             """
-                .formatted(receiverEmail, amount, balance);
+                .formatted(escapeHtml(receiverEmail), amount, balance);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Transfer Successful",
@@ -771,7 +771,7 @@ public void sendKYCVerifiedEmail(
 
             <p>Thank you for banking with Enterprise Banking System.</p>
             """
-                .formatted(senderEmail, amount, balance);
+                .formatted(escapeHtml(senderEmail), amount, balance);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Money Received",
@@ -826,10 +826,10 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        loanType,
-                        amount,
-                        tenureMonths
-                );
+    escapeHtml(loanType),
+    amount,
+    tenureMonths
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan Application Submitted",
@@ -879,9 +879,9 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        loanType,
-                        amount
-                );
+    escapeHtml(loanType),
+    amount
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan Approved",
@@ -936,10 +936,10 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        loanType,
-                        amount,
-                        reason
-                );
+    escapeHtml(loanType),
+    amount,
+    escapeHtml(reason)
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan Rejected",
@@ -997,11 +997,11 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        loanType,
-                        loanAmount,
-                        loanAmount,
-                        accountBalance
-                );
+    escapeHtml(loanType),
+    loanAmount,
+    loanAmount,
+    accountBalance
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan Disbursed",
@@ -1059,12 +1059,12 @@ public void sendKYCVerifiedEmail(
         </p>
         """
                 .formatted(
-                        loanType,
-                        emiAmount,
-                        remainingLoan,
-                        remainingInstallments,
-                        accountBalance
-                );
+    escapeHtml(loanType),
+    emiAmount,
+    remainingLoan,
+    remainingInstallments,
+    accountBalance
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan EMI Paid",
@@ -1114,9 +1114,9 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        loanType,
-                        loanAmount
-                );
+    escapeHtml(loanType),
+    loanAmount
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Loan Closed",
@@ -1275,9 +1275,9 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        principalAmount,
-                        reason
-                );
+    principalAmount,
+    escapeHtml(reason)
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Fixed Deposit Rejected",
@@ -1492,9 +1492,9 @@ public void sendKYCVerifiedEmail(
             </p>
             """
                 .formatted(
-                        monthlyInstallment,
-                        reason
-                );
+    monthlyInstallment,
+    escapeHtml(reason)
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Recurring Deposit Rejected",
@@ -1766,7 +1766,7 @@ public void sendKYCVerifiedEmail(
             <p>
             If you have any questions, please contact Enterprise Banking Support.
             </p>
-            """.formatted(reason);
+            """.formatted(escapeHtml(reason));
 
         String html = EmailTemplateBuilder.buildEmail(
                 "ATM Card Request Rejected",
@@ -1996,7 +1996,7 @@ public void sendKYCVerifiedEmail(
 
         <p>Please contact Enterprise Banking Support for assistance.</p>
         """
-                .formatted(reason);
+                .formatted(escapeHtml(reason));
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Cheque Book Request Rejected",
@@ -2102,7 +2102,10 @@ public void sendKYCVerifiedEmail(
 
         <p>You can now transfer funds to this beneficiary.</p>
         """
-                .formatted(beneficiaryName, beneficiaryAccount);
+                .formatted(
+    escapeHtml(beneficiaryName),
+    escapeHtml(beneficiaryAccount)
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Beneficiary Added",
@@ -2140,7 +2143,7 @@ public void sendKYCVerifiedEmail(
 
         <p>If you did not perform this action, please contact Enterprise Banking Support immediately.</p>
         """
-                .formatted(beneficiaryName);
+                .formatted(escapeHtml(beneficiaryName));
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Beneficiary Deleted",
@@ -2178,7 +2181,7 @@ public void sendKYCVerifiedEmail(
 
         <p>If you did not perform this update, please contact Enterprise Banking Support immediately.</p>
         """
-                .formatted(beneficiaryName);
+                .formatted(escapeHtml(beneficiaryName));
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Beneficiary Updated",
@@ -2404,7 +2407,10 @@ public void sendAdminPasswordResetEmail(
             <b>If you do NOT recognize this transaction, immediately change your password and contact Enterprise Banking Support.</b>
             </p>
             """
-                .formatted(transactionType, amount);
+                .formatted(
+    escapeHtml(transactionType),
+    amount
+);
 
         String html = EmailTemplateBuilder.buildEmail(
                 "Large Transaction Alert",
@@ -2445,4 +2451,17 @@ public void sendAdminPasswordResetEmail(
             );
         }
     }
+
+    private String escapeHtml(String value) {
+    if (value == null) {
+        return "";
+    }
+
+    return value
+            .replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("\"", "&quot;")
+            .replace("'", "&#39;");
+}
 }
