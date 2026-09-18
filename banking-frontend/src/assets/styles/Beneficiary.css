@@ -1,0 +1,832 @@
+/* =========================================================
+   BENEFICIARY PAGE
+========================================================= */
+
+.beneficiary-page {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 24px 30px 30px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BLUE HERO CONTAINER
+========================================================= */
+
+.beneficiary-hero {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #1d4ed8 100%
+        );
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.beneficiary-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 22px;
+}
+
+.beneficiary-title {
+    min-width: 0;
+}
+
+.beneficiary-eyebrow {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.beneficiary-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    font-weight: 750;
+}
+
+.beneficiary-header p {
+    margin: 7px 0 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ADD BENEFICIARY
+========================================================= */
+
+.add-beneficiary-btn {
+    flex: 0 0 auto;
+
+    width: 190px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.add-beneficiary-btn svg {
+    font-size: 15px;
+}
+
+.add-beneficiary-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.2);
+}
+
+.add-beneficiary-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.beneficiary-search {
+    width: 100%;
+    height: 54px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 0 17px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 13px;
+
+    color: #64748b;
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.08);
+
+    transition: 0.2s ease;
+}
+
+.beneficiary-search:focus-within {
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.18);
+}
+
+.beneficiary-search svg {
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    color: #64748b;
+}
+
+.beneficiary-search input {
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #0f172a;
+
+    font-size: 15px;
+}
+
+.beneficiary-search input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   BENEFICIARY GRID
+========================================================= */
+
+.beneficiary-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   BENEFICIARY CARD
+========================================================= */
+
+.beneficiary-card {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 275px;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf4;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.beneficiary-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(15, 23, 42, 0.11);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.beneficiary-top {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    margin-bottom: 17px;
+}
+
+.beneficiary-avatar {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2563eb;
+
+    font-size: 54px;
+
+    line-height: 1;
+}
+
+.beneficiary-top > div {
+    min-width: 0;
+}
+
+.beneficiary-top h3 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 19px;
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.nickname {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.beneficiary-body {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.beneficiary-body p {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+.beneficiary-body p svg {
+    flex: 0 0 17px;
+
+    width: 17px;
+
+    color: #2563eb;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ACTION ROW
+   IMPORTANT: ALWAYS ONE ROW
+========================================================= */
+
+.beneficiary-actions {
+    width: 100%;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: stretch !important;
+
+    justify-content: stretch !important;
+
+    gap: 12px;
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BOTH BUTTONS
+   EXACT SAME SIZE
+========================================================= */
+
+.beneficiary-actions .edit-btn,
+.beneficiary-actions .delete-btn {
+    flex: 1 1 0 !important;
+
+    width: 50% !important;
+    min-width: 0 !important;
+
+    height: 46px !important;
+
+    box-sizing: border-box;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-direction: row !important;
+
+    gap: 8px;
+
+    margin: 0 !important;
+
+    padding: 0 12px !important;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.beneficiary-actions .edit-btn {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px rgba(37, 99, 235, 0.18);
+}
+
+.beneficiary-actions .edit-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 18px rgba(37, 99, 235, 0.24);
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.beneficiary-actions .delete-btn {
+    background: #ef2929;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px rgba(239, 41, 41, 0.16);
+}
+
+.beneficiary-actions .delete-btn:hover {
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 18px rgba(239, 41, 41, 0.23);
+}
+
+.beneficiary-actions .edit-btn:active,
+.beneficiary-actions .delete-btn:active {
+    transform: translateY(0);
+}
+
+.beneficiary-actions .delete-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-beneficiary {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+}
+
+.empty-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.empty-beneficiary h3 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 18px;
+}
+
+.empty-beneficiary p {
+    margin: 7px 0 17px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.empty-add-btn {
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .beneficiary-page {
+        padding: 20px;
+    }
+
+    .beneficiary-hero {
+        padding: 25px;
+    }
+
+    .beneficiary-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .beneficiary-page {
+        padding: 14px;
+    }
+
+    .beneficiary-hero {
+        padding: 20px;
+
+        border-radius: 19px;
+    }
+
+    .beneficiary-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 14px;
+
+        margin-bottom: 16px;
+    }
+
+    .beneficiary-eyebrow {
+        font-size: 9px;
+    }
+
+    .beneficiary-header h2 {
+        font-size: 23px;
+    }
+
+    .beneficiary-header p {
+        font-size: 13px;
+    }
+
+    .add-beneficiary-btn {
+        width: 100%;
+
+        height: 44px;
+    }
+
+    .beneficiary-search {
+        height: 48px;
+
+        margin-bottom: 16px;
+    }
+
+    .beneficiary-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .beneficiary-card {
+        min-height: 0;
+
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+    .beneficiary-top {
+        gap: 11px;
+
+        margin-bottom: 15px;
+    }
+
+    .beneficiary-avatar {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+
+        font-size: 46px;
+    }
+
+    .beneficiary-top h3 {
+        font-size: 17px;
+    }
+
+    .beneficiary-body {
+        gap: 9px;
+    }
+
+    .beneficiary-body p {
+        font-size: 13px;
+    }
+
+    .beneficiary-actions {
+        gap: 9px;
+
+        padding-top: 17px;
+    }
+
+    .beneficiary-actions .edit-btn,
+    .beneficiary-actions .delete-btn {
+        height: 42px !important;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .beneficiary-page {
+        padding: 10px;
+    }
+
+    .beneficiary-hero {
+        padding: 16px;
+
+        border-radius: 16px;
+    }
+
+    .beneficiary-header h2 {
+        font-size: 21px;
+    }
+
+    .beneficiary-header p {
+        font-size: 12px;
+    }
+
+    .beneficiary-card {
+        padding: 15px;
+    }
+
+    .beneficiary-avatar {
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+
+        font-size: 42px;
+    }
+
+    .beneficiary-top h3 {
+        font-size: 16px;
+    }
+
+    .nickname {
+        font-size: 12px;
+    }
+
+    .beneficiary-body p {
+        font-size: 12px;
+    }
+
+    .beneficiary-actions {
+        gap: 8px;
+    }
+
+    .beneficiary-actions .edit-btn,
+    .beneficiary-actions .delete-btn {
+        height: 40px !important;
+
+        font-size: 12px;
+
+        padding: 0 8px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .beneficiary-page {
+        padding: 8px;
+    }
+
+    .beneficiary-hero {
+        padding: 13px;
+    }
+
+    .beneficiary-card {
+        padding: 13px;
+    }
+
+    /*
+       Still keep both buttons on ONE ROW.
+    */
+
+    .beneficiary-actions {
+        flex-direction: row !important;
+
+        gap: 7px;
+    }
+
+    .beneficiary-actions .edit-btn,
+    .beneficiary-actions .delete-btn {
+        width: 50% !important;
+
+        height: 38px !important;
+
+        font-size: 11px;
+    }
+
+}

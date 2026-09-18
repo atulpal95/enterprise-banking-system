@@ -1,0 +1,98 @@
+.withdraw-page{
+    padding:30px;
+}
+
+.withdraw-card{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.withdraw-card h2{
+    margin-bottom:8px;
+    font-size:30px;
+    color:#0f172a;
+}
+
+.withdraw-card p{
+    color:#64748b;
+    margin-bottom:28px;
+}
+
+.withdraw-card .form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:22px;
+}
+
+.withdraw-card label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#1e293b;
+}
+
+.withdraw-card input{
+    padding:14px 16px;
+    border:1px solid #dbe2ea;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    transition:.25s;
+}
+
+.withdraw-card input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}
+
+.current-balance{
+    margin:20px 0;
+    padding:18px;
+    border-left:5px solid #0891b2;
+    background:#ecfeff;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.current-balance strong{
+    font-size:24px;
+    color:#0f172a;
+}
+
+/* Beautiful Withdraw Button */
+
+.withdraw-btn{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+.withdraw-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+}
+
+.withdraw-btn:active{
+    transform:scale(.98);
+}
+
+.withdraw-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}

@@ -1,0 +1,141 @@
+.account-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+
+    border:1px solid #edf2f7;
+
+    height:100%;
+
+}
+
+.account-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.account-card-header h3{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+.account-card-header span{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+.account-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+.info-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.info-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.info-left svg{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+}
+
+.info-left span{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+.info-row strong{
+
+    color:#0f172a;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+.status-badge{
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status-badge.success{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+@media(max-width:992px){
+
+    .account-card{
+
+        margin-top:20px;
+
+    }
+
+}

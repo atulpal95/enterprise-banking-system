@@ -1,0 +1,642 @@
+/* =========================================================
+   PAL BANK - PROFILE CARD
+   Clean • Professional • Responsive
+========================================================= */
+
+
+/* =========================================================
+   MAIN PROFILE CARD
+========================================================= */
+
+.profile-header-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 34px;
+
+    padding: 34px 38px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7edf5;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 28px rgba(15, 23, 42, 0.06);
+
+    margin-bottom: 28px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT PROFILE AREA
+========================================================= */
+
+.profile-left {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+
+    flex: 0 0 150px;
+
+    position: relative;
+}
+
+.profile-avatar,
+.default-avatar {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid #2563eb;
+
+    background: #eff6ff;
+
+    box-shadow:
+        0 10px 28px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 14px 32px rgba(37, 99, 235, 0.28);
+}
+
+.default-avatar {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS CONTAINER
+========================================================= */
+
+.profile-details {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.profile-details h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 34px;
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CUSTOMER TYPE
+========================================================= */
+
+.customer-type {
+    margin: 7px 0 18px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DETAIL ROW
+========================================================= */
+
+.detail-row {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0 30px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   INDIVIDUAL DETAIL
+========================================================= */
+
+.detail-row span {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 13px 0;
+
+    color: #475569;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    border-bottom: 1px solid #eef2f7;
+
+    overflow-wrap: anywhere;
+}
+
+.detail-row span svg {
+    flex: 0 0 auto;
+
+    color: #2563eb;
+
+    font-size: 14px;
+}
+
+.detail-row span strong {
+    color: #0f172a;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   EMAIL ROW
+   Since the second detail row has only one item,
+   make it occupy the complete width.
+========================================================= */
+
+.detail-row:nth-of-type(2) {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-group {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 15px;
+
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    min-height: 30px;
+
+    box-sizing: border-box;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.badge svg {
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   BADGE COLORS
+========================================================= */
+
+.success {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+.verified {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+.account {
+    background: #ede9fe;
+
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   EDIT PROFILE BUTTON
+========================================================= */
+
+.edit-profile-btn {
+    flex: 0 0 auto;
+
+    width: 176px;
+    min-height: 48px;
+
+    box-sizing: border-box;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 26px rgba(37, 99, 235, 0.28);
+}
+
+.edit-profile-btn:active {
+    transform: translateY(0);
+}
+
+.edit-profile-btn svg {
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .profile-header-card {
+        gap: 26px;
+
+        padding: 30px;
+    }
+
+    .profile-left {
+        gap: 22px;
+    }
+
+    .avatar-wrapper {
+        width: 130px;
+        height: 130px;
+
+        flex-basis: 130px;
+    }
+
+    .profile-details h2 {
+        font-size: 30px;
+    }
+
+    .detail-row {
+        gap: 0 22px;
+    }
+
+    .edit-profile-btn {
+        width: 165px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .profile-header-card {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 24px;
+
+        padding: 28px;
+    }
+
+    .profile-left {
+        width: 100%;
+
+        align-items: flex-start;
+    }
+
+    .avatar-wrapper {
+        width: 120px;
+        height: 120px;
+
+        flex-basis: 120px;
+    }
+
+    .profile-details h2 {
+        font-size: 29px;
+    }
+
+    .edit-profile-btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   LARGE MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .profile-header-card {
+        padding: 25px 20px;
+
+        border-radius: 19px;
+
+        gap: 22px;
+    }
+
+    .profile-left {
+        gap: 18px;
+    }
+
+    .avatar-wrapper {
+        width: 105px;
+        height: 105px;
+
+        flex-basis: 105px;
+    }
+
+    .profile-details h2 {
+        font-size: 27px;
+    }
+
+    .customer-type {
+        margin: 6px 0 14px;
+
+        font-size: 13px;
+    }
+
+    .detail-row {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 0;
+    }
+
+    .detail-row:nth-of-type(2) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .detail-row span {
+        padding: 11px 0;
+
+        font-size: 12px;
+    }
+
+    .status-group {
+        margin-top: 13px;
+
+        gap: 7px;
+    }
+
+    .badge {
+        min-height: 29px;
+
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .profile-header-card {
+        padding: 23px 17px;
+
+        border-radius: 18px;
+
+        margin-bottom: 22px;
+    }
+
+    .profile-left {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 15px;
+    }
+
+    .avatar-wrapper {
+        width: 110px;
+        height: 110px;
+
+        flex-basis: 110px;
+    }
+
+    .profile-details {
+        width: 100%;
+    }
+
+    .profile-details h2 {
+        font-size: 26px;
+
+        letter-spacing: -0.3px;
+    }
+
+    .customer-type {
+        margin: 6px 0 13px;
+
+        font-size: 12px;
+    }
+
+    .detail-row {
+        width: 100%;
+
+        text-align: left;
+    }
+
+    .detail-row span {
+        justify-content: flex-start;
+
+        width: 100%;
+
+        padding: 11px 2px;
+
+        font-size: 12px;
+    }
+
+    .detail-row span svg {
+        font-size: 13px;
+    }
+
+    .status-group {
+        justify-content: center;
+
+        margin-top: 13px;
+    }
+
+    .edit-profile-btn {
+        width: 100%;
+
+        min-height: 46px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .profile-header-card {
+        padding: 20px 14px;
+
+        border-radius: 16px;
+    }
+
+    .avatar-wrapper {
+        width: 98px;
+        height: 98px;
+
+        flex-basis: 98px;
+    }
+
+    .profile-details h2 {
+        font-size: 24px;
+    }
+
+    .customer-type {
+        font-size: 11px;
+    }
+
+    .detail-row span {
+        font-size: 11px;
+
+        gap: 6px;
+    }
+
+    .status-group {
+        gap: 6px;
+    }
+
+    .badge {
+        min-height: 27px;
+
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SAFETY
+   Prevents long email/account values from breaking layout.
+========================================================= */
+
+.profile-header-card,
+.profile-left,
+.profile-details,
+.detail-row,
+.detail-row span,
+.status-group {
+    max-width: 100%;
+}
+
+.profile-details *,
+.detail-row span {
+    overflow-wrap: anywhere;
+}

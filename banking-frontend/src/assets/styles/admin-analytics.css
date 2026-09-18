@@ -1,0 +1,1495 @@
+/* =========================================================
+   PAL BANK - ADMIN ANALYTICS
+   ========================================================= */
+
+.admin-analytics-page {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 32px;
+    color: #0f172a;
+    background: #f6f8fc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.analytics-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.analytics-eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.analytics-page-header h1 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.analytics-page-header p {
+    margin: 8px 0 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Refresh button */
+
+.analytics-refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 110px;
+    height: 44px;
+    padding: 0 18px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.analytics-refresh-button:hover {
+    background: #1d4ed8;
+}
+
+.analytics-refresh-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.analytics-refresh-button i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   KPI GRID
+   ========================================================= */
+
+.analytics-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.analytics-kpi-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-height: 125px;
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.analytics-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.kpi-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+}
+
+.kpi-icon.blue {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.kpi-icon.green {
+    background: #eaf8ef;
+    color: #16a34a;
+}
+
+.kpi-icon.orange {
+    background: #fff3e5;
+    color: #ea580c;
+}
+
+.kpi-icon.purple {
+    background: #f2eaff;
+    color: #7c3aed;
+}
+
+.kpi-content {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+.kpi-content span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.kpi-content strong {
+    display: block;
+
+    color: #0f172a;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.25;
+
+    word-break: break-word;
+}
+
+.kpi-content small {
+    display: block;
+    margin-top: 5px;
+
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.analytics-section {
+    margin-bottom: 28px;
+}
+
+.analytics-section-heading {
+    margin-bottom: 18px;
+}
+
+.analytics-section-heading h2 {
+    margin: 0;
+
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+.analytics-section-heading p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FINANCIAL OVERVIEW
+   ========================================================= */
+
+.financial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.overview-card {
+    position: relative;
+
+    min-height: 125px;
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 17px;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+}
+
+.overview-card::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+
+    width: 4px;
+
+    border-radius: 0 4px 4px 0;
+}
+
+.overview-card.green::before {
+    background: #16a34a;
+}
+
+.overview-card.red::before {
+    background: #dc2626;
+}
+
+.overview-card.purple::before {
+    background: #7c3aed;
+}
+
+.overview-card.blue::before {
+    background: #2563eb;
+}
+
+.overview-card.orange::before {
+    background: #ea580c;
+}
+
+.overview-card span {
+    display: block;
+
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.overview-card strong {
+    display: block;
+    margin-top: 14px;
+
+    color: #0f172a;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.overview-card small {
+    display: block;
+    margin-top: 5px;
+
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ANALYTICS CARD
+   ========================================================= */
+
+.analytics-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-bottom: 28px;
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe5f2;
+    border-radius: 20px;
+
+    box-shadow: 0 7px 24px rgba(15, 23, 42, 0.05);
+}
+
+.analytics-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.analytics-card-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.analytics-card-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.analytics-badge {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MONTHLY CHART
+   ========================================================= */
+
+.monthly-chart {
+    width: 100%;
+    height: 360px;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+   ========================================================= */
+
+.analytics-two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================================================
+   STATUS LIST
+   ========================================================= */
+
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.status-item {
+    width: 100%;
+}
+
+.status-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.status-item-top span {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-item-top strong {
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #edf1f6;
+
+    border-radius: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+.progress-fill.blue {
+    background: #2563eb;
+}
+
+.progress-fill.purple {
+    background: #7c3aed;
+}
+
+.progress-fill.green {
+    background: #16a34a;
+}
+
+.progress-fill.red {
+    background: #dc2626;
+}
+
+
+/* =========================================================
+   DEPOSIT STATUS
+   ========================================================= */
+
+.deposit-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.deposit-status-item {
+    width: 100%;
+}
+
+.deposit-status-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.deposit-status-top span {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.deposit-status-top strong {
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TOP CUSTOMERS TABLE
+   ========================================================= */
+
+.top-customers-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.top-customers-table {
+    width: 100%;
+    min-width: 650px;
+
+    border-collapse: collapse;
+}
+
+.top-customers-table th {
+    padding: 14px 16px;
+
+    background: #f3f6fb;
+
+    color: #52709a;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-align: left;
+
+    letter-spacing: 0.5px;
+}
+
+.top-customers-table th:last-child {
+    text-align: right;
+}
+
+.top-customers-table td {
+    padding: 17px 16px;
+
+    border-bottom: 1px solid #edf1f6;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.top-customers-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.top-customers-table td:last-child {
+    text-align: right;
+}
+
+.rank-circle {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #eef4ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.customer-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf2ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.customer-name strong {
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.account-number {
+    color: #64748b;
+
+    font-family: Consolas, monospace;
+
+    font-size: 12px;
+}
+
+.customer-balance {
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.empty-table {
+    padding: 30px !important;
+    text-align: center !important;
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   PENDING OPERATIONS
+   ========================================================= */
+
+.pending-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.pending-card {
+    padding: 18px 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+}
+
+.pending-card span {
+    display: block;
+
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pending-card strong {
+    display: block;
+    margin-top: 8px;
+
+    color: #0f172a;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CUSTOMER STATUS
+   ========================================================= */
+
+.customer-status {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.customer-status-row {
+    width: 100%;
+}
+
+.customer-status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.customer-status-header > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.customer-status-header strong {
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+.status-dot.green {
+    background: #16a34a;
+}
+
+.status-dot.red {
+    background: #dc2626;
+}
+
+.customer-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 24px;
+    padding-top: 17px;
+
+    border-top: 1px solid #edf1f6;
+
+    color: #64748b;
+    font-size: 13px;
+}
+
+.customer-total strong {
+    color: #0f172a;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.analytics-information {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin-bottom: 20px;
+    padding: 18px 20px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+}
+
+.information-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.analytics-information strong {
+    display: block;
+
+    color: #1e3a8a;
+    font-size: 14px;
+}
+
+.analytics-information p {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.analytics-empty {
+    padding: 30px;
+
+    color: #94a3b8;
+
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.admin-analytics-loading {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf1;
+    border-radius: 20px;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+}
+
+.admin-analytics-loading p {
+    margin-top: 15px;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.analytics-spinner {
+    width: 40px;
+    height: 40px;
+
+    border: 4px solid #dbeafe;
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation: analytics-loading-spin 0.8s linear infinite;
+}
+
+@keyframes analytics-loading-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.analytics-error {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #fecaca;
+    border-radius: 20px;
+}
+
+.analytics-error-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #fee2e2;
+    color: #dc2626;
+
+    font-size: 24px;
+}
+
+.analytics-error h3 {
+    margin: 0;
+
+    color: #0f172a;
+    font-size: 20px;
+}
+
+.analytics-error p {
+    margin: 7px 0 15px;
+
+    color: #64748b;
+}
+
+.analytics-retry-btn {
+    padding: 10px 18px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .analytics-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .financial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pending-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .analytics-two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-two-column .analytics-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .admin-analytics-page {
+        padding: 20px 16px 30px;
+    }
+
+    .analytics-page-header {
+        flex-direction: column;
+    }
+
+    .analytics-page-header h1 {
+        font-size: 28px;
+    }
+
+    .analytics-refresh-button {
+        width: 100%;
+    }
+
+    .analytics-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .financial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card {
+        padding: 20px;
+    }
+
+    .analytics-card-header {
+        flex-direction: column;
+    }
+
+    .monthly-chart {
+        height: 300px;
+    }
+
+    .pending-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .admin-analytics-page {
+        padding: 16px 12px 25px;
+    }
+
+    .analytics-page-header h1 {
+        font-size: 25px;
+    }
+
+    .analytics-kpi-card {
+        padding: 17px;
+    }
+
+    .kpi-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+    }
+
+    .kpi-content strong {
+        font-size: 21px;
+    }
+
+    .analytics-card {
+        padding: 17px;
+    }
+
+    .overview-card {
+        padding: 18px;
+    }
+
+    .overview-card strong {
+        font-size: 23px;
+    }
+}
+
+/* =========================================================
+   PAL BANK - KPI CARDS / TOTAL BALANCE FINAL FIX
+   ========================================================= */
+.analytics-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;width:100%;margin-bottom:32px}
+.analytics-kpi-card{min-width:0;width:100%;min-height:164px;padding:26px 24px;display:flex;align-items:center;gap:18px;box-sizing:border-box;background:#fff;border:1px solid #e7edf5;border-radius:20px;overflow:visible;box-shadow:0 8px 25px rgba(15,23,42,.05);transition:transform .2s ease,box-shadow .2s ease}
+.analytics-kpi-card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(15,23,42,.08)}
+.kpi-icon{flex:0 0 60px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:16px;font-size:23px}
+.kpi-icon.blue{color:#2563eb;background:#eaf2ff}.kpi-icon.green{color:#16a34a;background:#eaf9f0}.kpi-icon.orange{color:#ea580c;background:#fff3e5}.kpi-icon.purple{color:#7c3aed;background:#f1eaff}
+.kpi-content{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;overflow:visible}
+.kpi-content>span{display:block;margin-bottom:7px;color:#64748b;font-size:14px;font-weight:500;line-height:1.3;white-space:nowrap}
+.kpi-content>strong{display:block;margin:0;color:#0f172a;font-size:28px;font-weight:750;line-height:1.15;letter-spacing:-.7px;white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}
+.kpi-content>small{display:block;margin-top:7px;color:#94a3b8;font-size:13px;font-weight:400;line-height:1.4}
+.analytics-kpi-card.orange{overflow:visible}.analytics-kpi-card.orange .kpi-content{min-width:0;flex:1;overflow:visible}.analytics-kpi-card.orange .kpi-content>strong{display:block;width:max-content;max-width:none;color:#0f172a;font-size:21px;font-weight:750;line-height:1.2;letter-spacing:-.6px;white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}.analytics-kpi-card.orange .kpi-content>small{max-width:170px;line-height:1.35}
+@media (min-width:1000px) and (max-width:1399px){.analytics-kpi-card.orange .kpi-content>strong{font-size:20px}}
+@media (max-width:1200px){.analytics-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.analytics-kpi-grid{grid-template-columns:1fr;gap:16px}.analytics-kpi-card{min-height:145px;padding:22px}}
+@media (max-width:420px){.analytics-kpi-card{gap:14px;padding:20px}.kpi-icon{flex:0 0 52px;width:52px;height:52px;font-size:20px}.kpi-content>strong{font-size:25px}.analytics-kpi-card.orange .kpi-content>strong{font-size:19px}}
+
+/* =========================================================
+   TOTAL BALANCE - DEFINITIVE NO-CLIP FIX
+   ========================================================= */
+
+.analytics-kpi-card.orange {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    gap: 12px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+}
+
+.analytics-kpi-card.orange .kpi-icon {
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    border-radius: 14px !important;
+    font-size: 20px !important;
+}
+
+.analytics-kpi-card.orange .kpi-content {
+    min-width: 0 !important;
+    width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+}
+
+.analytics-kpi-card.orange .kpi-content > span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.analytics-kpi-card.orange .kpi-content > strong {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.75px !important;
+    color: #0f172a !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    font-variant-numeric: tabular-nums;
+}
+
+.analytics-kpi-card.orange .kpi-content > small {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.3;
+}
+
+@media (min-width: 1500px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 19px !important;
+        letter-spacing: -0.8px !important;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1499px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 17px !important;
+        letter-spacing: -0.7px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .analytics-kpi-card.orange {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+        gap: 16px !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-icon {
+        flex-basis: 52px !important;
+        width: 52px !important;
+        min-width: 52px !important;
+        height: 52px !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 21px !important;
+        letter-spacing: -0.7px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .analytics-kpi-card.orange {
+        padding: 22px !important;
+        gap: 16px !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-icon {
+        flex-basis: 52px !important;
+        width: 52px !important;
+        min-width: 52px !important;
+        height: 52px !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 22px !important;
+        letter-spacing: -0.7px !important;
+    }
+}
+
+/* =========================================================
+   FINAL TOTAL BALANCE FIX
+   Smaller amount so the COMPLETE value stays inside the card.
+   ========================================================= */
+
+.analytics-kpi-card.orange {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    gap: 12px !important;
+}
+
+.analytics-kpi-card.orange .kpi-content {
+    min-width: 0 !important;
+    width: auto !important;
+    flex: 1 1 0 !important;
+    overflow: hidden !important;
+}
+
+.analytics-kpi-card.orange .kpi-content > strong {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    /* Intentionally smaller: prevents digit clipping */
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.35px !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    display: block !important;
+
+    font-variant-numeric: tabular-nums;
+}
+
+/* 1500px+ screens: still compact enough for the 4-card grid */
+@media (min-width: 1500px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 16px !important;
+        letter-spacing: -0.4px !important;
+    }
+}
+
+/* Normal desktop/laptop */
+@media (min-width: 1201px) and (max-width: 1499px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 15px !important;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 19px !important;
+        letter-spacing: -0.45px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 20px !important;
+    }
+}
+
+/* =========================================================
+   TOTAL BALANCE - FINAL PROFESSIONAL FIX
+   ========================================================= */
+
+/* Give the balance card slightly more room */
+.analytics-kpi-grid {
+    grid-template-columns: 1fr 1fr 1.12fr 1fr !important;
+}
+
+/* Balance card */
+.analytics-kpi-card.orange {
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Balance content */
+.analytics-kpi-card.orange .kpi-content {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+}
+
+/* Balance amount */
+.analytics-kpi-card.orange .kpi-content > strong {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    /* SMALLER SIZE */
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.3px !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+
+    font-variant-numeric: tabular-nums;
+}
+
+/* Balance subtitle */
+.analytics-kpi-card.orange .kpi-content > small {
+    display: block !important;
+    margin-top: 8px !important;
+    max-width: 150px !important;
+    line-height: 1.35 !important;
+}
+
+/* Keep icon from consuming too much space */
+.analytics-kpi-card.orange .kpi-icon {
+    flex: 0 0 52px !important;
+    width: 52px !important;
+    height: 52px !important;
+}
+
+/* Laptop */
+@media (max-width: 1300px) {
+    .analytics-kpi-grid {
+        grid-template-columns: 1fr 1fr 1.15fr 1fr !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 17px !important;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .analytics-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 20px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .analytics-kpi-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .analytics-kpi-card.orange .kpi-content > strong {
+        font-size: 21px !important;
+    }
+}
+
+/* =========================================================
+   ADMIN ANALYTICS — BLUE HERO CARD
+   ONLY PAGE HEADER IS CHANGED
+   All KPI cards, charts, tables and sections remain unchanged.
+   ========================================================= */
+
+.analytics-page-header {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 205px;
+    padding: 34px 36px;
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    box-sizing: border-box;
+    border: none;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #2f6ff0 50%,
+            #3b82f6 100%
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.20);
+}
+
+/* Decorative circle */
+.analytics-page-header::before {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: -180px;
+    right: 90px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+
+    pointer-events: none;
+}
+
+/* Decorative circle */
+.analytics-page-header::after {
+    content: "";
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -45px;
+    bottom: -170px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+
+    pointer-events: none;
+}
+
+/* Keep header content above decorations */
+.analytics-page-header > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Eyebrow */
+.analytics-page-header .analytics-eyebrow {
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+/* Hero title */
+.analytics-page-header h1 {
+    margin: 0;
+    color: #ffffff;
+
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Hero description */
+.analytics-page-header p {
+    margin: 9px 0 0;
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Refresh button stays white */
+.analytics-page-header .analytics-refresh-button {
+    position: relative;
+    z-index: 3;
+
+    flex-shrink: 0;
+
+    min-width: 112px;
+    height: 46px;
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.analytics-page-header .analytics-refresh-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: #ffffff;
+    color: #1d4ed8;
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.analytics-page-header .analytics-refresh-button:disabled {
+    background: #ffffff;
+    color: #2563eb;
+    opacity: 0.70;
+}
+
+/* =========================================================
+   HERO RESPONSIVE ONLY
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .analytics-page-header {
+        min-height: auto;
+        padding: 28px 24px;
+        border-radius: 22px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .analytics-page-header h1 {
+        font-size: 28px;
+    }
+
+    .analytics-page-header p {
+        font-size: 14px;
+    }
+
+    .analytics-page-header .analytics-refresh-button {
+        width: 100%;
+    }
+}

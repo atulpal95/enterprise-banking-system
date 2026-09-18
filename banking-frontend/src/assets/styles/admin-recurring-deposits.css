@@ -1,0 +1,1340 @@
+/* =========================================================
+   ADMIN RECURRING DEPOSITS
+   ========================================================= */
+
+.admin-rd-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-rd-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.admin-rd-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.admin-rd-header h1 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.admin-rd-header p {
+    margin: 7px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.admin-rd-refresh-btn {
+    min-width: 105px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #dbe3ef;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #1e3a8a;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.admin-rd-refresh-btn:hover:not(:disabled) {
+    border-color: #93c5fd;
+    background: #eff6ff;
+    transform: translateY(-1px);
+}
+
+.admin-rd-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.admin-rd-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.admin-rd-summary-card {
+    min-height: 92px;
+    padding: 17px 18px;
+    box-sizing: border-box;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.admin-rd-summary-card span {
+    display: block;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-rd-summary-card strong {
+    color: #0f172a;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.admin-rd-summary-card.pending {
+    border-color: #fde68a;
+    background: #fffbeb;
+}
+
+.admin-rd-summary-card.pending strong {
+    color: #b45309;
+}
+
+.admin-rd-summary-card.active {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+}
+
+.admin-rd-summary-card.active strong {
+    color: #15803d;
+}
+
+.admin-rd-summary-card.rejected {
+    border-color: #fecaca;
+    background: #fff7f7;
+}
+
+.admin-rd-summary-card.rejected strong {
+    color: #dc2626;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.admin-rd-content {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.045);
+    overflow: hidden;
+}
+
+.admin-rd-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-rd-table {
+    width: 100%;
+    min-width: 1180px;
+    border-collapse: collapse;
+}
+
+.admin-rd-table th {
+    padding: 14px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #64748b;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+}
+
+.admin-rd-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #eef2f7;
+    color: #334155;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.admin-rd-table tbody tr {
+    transition: background 0.18s ease;
+}
+
+.admin-rd-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.admin-rd-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-rd-table td strong {
+    color: #0f172a;
+    font-weight: 750;
+}
+
+.admin-rd-table td small {
+    margin-left: 3px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.admin-rd-id {
+    color: #2563eb;
+    font-weight: 800;
+}
+
+.admin-rd-customer strong {
+    display: block;
+    max-width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-rd-maturity {
+    color: #15803d !important;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.admin-rd-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    min-height: 27px;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.45px;
+}
+
+.admin-rd-status.pending {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.admin-rd-status.active {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.admin-rd-status.rejected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.admin-rd-status.closed {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.admin-rd-status.matured {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.admin-rd-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.admin-rd-action {
+    min-width: 72px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.admin-rd-action:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.admin-rd-action:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.admin-rd-action.approve {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.admin-rd-action.approve:hover:not(:disabled) {
+    background: #dcfce7;
+}
+
+.admin-rd-action.reject {
+    border-color: #fecaca;
+    background: #fff5f5;
+    color: #dc2626;
+}
+
+.admin-rd-action.reject:hover:not(:disabled) {
+    background: #fee2e2;
+}
+
+.admin-rd-action.close {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.admin-rd-action.close:hover:not(:disabled) {
+    background: #dbeafe;
+}
+
+.admin-rd-no-action {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =========================
+   LOADING / ERROR / EMPTY
+========================= */
+
+.admin-rd-state {
+    min-height: 300px;
+    padding: 45px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.admin-rd-state h3 {
+    margin: 14px 0 5px;
+    color: #0f172a;
+    font-size: 17px;
+}
+
+.admin-rd-state p {
+    max-width: 440px;
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.admin-rd-state.error h3 {
+    color: #b91c1c;
+}
+
+.admin-rd-state button {
+    margin-top: 17px;
+    height: 36px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.admin-rd-state-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.admin-rd-loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #dbeafe;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: adminRdSpin 0.8s linear infinite;
+}
+
+@keyframes adminRdSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================
+   REJECTION MODAL
+========================= */
+
+.admin-rd-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.52);
+    backdrop-filter: blur(3px);
+}
+
+.admin-rd-modal {
+    width: min(520px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.22);
+}
+
+.admin-rd-modal-header {
+    padding: 20px 21px 17px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.admin-rd-modal-header span {
+    display: block;
+    margin-bottom: 5px;
+    color: #dc2626;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.admin-rd-modal-header h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.admin-rd-modal-close {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.admin-rd-modal-close:hover:not(:disabled) {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.admin-rd-modal-close:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.admin-rd-modal-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 16px 21px;
+    background: #f8fafc;
+}
+
+.admin-rd-modal-info div {
+    min-width: 0;
+}
+
+.admin-rd-modal-info span {
+    display: block;
+    margin-bottom: 4px;
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.admin-rd-modal-info strong {
+    display: block;
+    overflow: hidden;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-rd-form-group {
+    padding: 20px 21px 6px;
+}
+
+.admin-rd-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.admin-rd-form-group textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px 13px;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    background: #ffffff;
+    color: #334155;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.55;
+    transition: 0.18s ease;
+}
+
+.admin-rd-form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.admin-rd-form-group textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-rd-form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    text-align: right;
+    font-size: 10px;
+}
+
+.admin-rd-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 16px 21px 20px;
+}
+
+.admin-rd-modal-cancel,
+.admin-rd-modal-confirm {
+    min-width: 92px;
+    height: 38px;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.admin-rd-modal-cancel {
+    border: 1px solid #dbe3ef;
+    background: #ffffff;
+    color: #475569;
+}
+
+.admin-rd-modal-cancel:hover:not(:disabled) {
+    background: #f8fafc;
+}
+
+.admin-rd-modal-confirm {
+    border: 1px solid #dc2626;
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.admin-rd-modal-confirm:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+.admin-rd-modal-cancel:disabled,
+.admin-rd-modal-confirm:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .admin-rd-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .admin-rd-page {
+        padding: 18px 14px;
+    }
+
+    .admin-rd-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-rd-header h1 {
+        font-size: 24px;
+    }
+
+    .admin-rd-refresh-btn {
+        width: 100%;
+    }
+
+    .admin-rd-summary {
+        gap: 10px;
+    }
+
+    .admin-rd-summary-card {
+        min-height: 82px;
+        padding: 14px;
+    }
+
+    .admin-rd-summary-card strong {
+        font-size: 21px;
+    }
+
+    .admin-rd-modal-info {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-rd-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .admin-rd-modal-cancel,
+    .admin-rd-modal-confirm {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .admin-rd-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-rd-summary-card span {
+        font-size: 10px;
+    }
+
+    .admin-rd-summary-card strong {
+        font-size: 19px;
+    }
+
+    .admin-rd-modal-overlay {
+        padding: 12px;
+    }
+
+    .admin-rd-modal {
+        border-radius: 14px;
+    }
+
+    .admin-rd-modal-header,
+    .admin-rd-form-group,
+    .admin-rd-modal-actions {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* =========================================================
+   RD ACTION CONFIRMATION + REJECTION MODALS
+   ========================================================= */
+
+/* ---------- Modal Overlay ---------- */
+
+.admin-rd-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.62);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    animation: adminRdModalFadeIn 0.2s ease;
+}
+
+/* ---------- Modal ---------- */
+
+.admin-rd-modal {
+    width: min(560px, 100%);
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.22),
+        0 8px 24px rgba(15, 23, 42, 0.10);
+
+    animation: adminRdModalSlideUp 0.25s ease;
+}
+
+/* ---------- Modal Header ---------- */
+
+.admin-rd-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 25px 28px 21px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.admin-rd-modal-header > div {
+    min-width: 0;
+}
+
+.admin-rd-modal-header span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.admin-rd-modal-header h2 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+/* ---------- Close X ---------- */
+
+.admin-rd-modal-close {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-rd-modal-close:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: rotate(3deg);
+}
+
+.admin-rd-modal-close:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------- Modal Information ---------- */
+
+.admin-rd-modal-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin: 24px 28px 0;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #f8fafc;
+}
+
+.admin-rd-modal-info > div {
+    min-width: 0;
+
+    padding: 16px 17px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-rd-modal-info > div:nth-child(odd) {
+    border-right: 1px solid #e2e8f0;
+}
+
+.admin-rd-modal-info > div:nth-last-child(-n + 2) {
+    border-bottom: none;
+}
+
+.admin-rd-modal-info span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.admin-rd-modal-info strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #172033;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Maturity amount */
+
+.admin-rd-modal-info .admin-rd-maturity {
+    color: #07883e;
+}
+
+/* ---------- Modal Action Buttons ---------- */
+
+.admin-rd-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding: 20px 28px 25px;
+
+    margin-top: 22px;
+
+    border-top: 1px solid #eef2f7;
+}
+
+/* Cancel */
+
+.admin-rd-modal-cancel {
+    min-width: 120px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 11px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-rd-modal-cancel:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.admin-rd-modal-cancel:active {
+    transform: scale(0.98);
+}
+
+.admin-rd-modal-cancel:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Confirm */
+
+.admin-rd-modal-confirm {
+    min-width: 140px;
+    height: 46px;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #16a34a;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 16px rgba(22, 163, 74, 0.20);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-rd-modal-confirm:hover {
+    background: #15803d;
+    box-shadow: 0 9px 20px rgba(22, 163, 74, 0.28);
+}
+
+.admin-rd-modal-confirm:active {
+    transform: translateY(1px);
+}
+
+.admin-rd-modal-confirm:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ---------- Rejection Modal ---------- */
+
+.admin-rd-form-group {
+    padding: 0 28px;
+}
+
+.admin-rd-form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.admin-rd-form-group textarea {
+    width: 100%;
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.55;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-rd-form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.admin-rd-form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.admin-rd-form-group small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+    text-align: right;
+}
+
+/* ---------- Modal Animation ---------- */
+
+@keyframes adminRdModalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes adminRdModalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   RD NOTIFICATION
+   ========================================================= */
+
+.admin-rd-notification {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+
+    z-index: 10000;
+
+    min-width: 320px;
+    max-width: 440px;
+
+    padding: 15px 18px;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.16),
+        0 5px 15px rgba(15, 23, 42, 0.08);
+
+    animation: adminRdNotificationIn 0.25s ease;
+}
+
+@keyframes adminRdNotificationIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .admin-rd-modal-overlay {
+        padding: 14px;
+        align-items: flex-end;
+    }
+
+    .admin-rd-modal {
+        width: 100%;
+        max-height: calc(100vh - 28px);
+
+        border-radius: 20px 20px 14px 14px;
+    }
+
+    .admin-rd-modal-header {
+        padding: 21px 20px 18px;
+    }
+
+    .admin-rd-modal-header h2 {
+        font-size: 19px;
+    }
+
+    .admin-rd-modal-info {
+        grid-template-columns: 1fr;
+        margin: 18px 20px 0;
+    }
+
+    .admin-rd-modal-info > div {
+        border-right: none !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    .admin-rd-modal-info > div:last-child {
+        border-bottom: none !important;
+    }
+
+    .admin-rd-modal-actions {
+        flex-direction: column-reverse;
+
+        padding: 17px 20px 20px;
+
+        margin-top: 18px;
+    }
+
+    .admin-rd-modal-cancel,
+    .admin-rd-modal-confirm {
+        width: 100%;
+    }
+
+    .admin-rd-form-group {
+        padding: 0 20px;
+    }
+
+    .admin-rd-notification {
+        top: 14px;
+        right: 14px;
+        left: 14px;
+
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* =========================================================
+   RECURRING DEPOSIT — BLUE HERO CARD
+   ONLY .admin-rd-header IS OVERRIDDEN
+   ========================================================= */
+
+.admin-rd-header {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 205px;
+    padding: 34px 36px;
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    box-sizing: border-box;
+    border: none;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #2f6ff0 50%,
+            #3b82f6 100%
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.20);
+}
+
+/* Decorative circle 1 */
+.admin-rd-header::before {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: -180px;
+    right: 90px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+
+    pointer-events: none;
+}
+
+/* Decorative circle 2 */
+.admin-rd-header::after {
+    content: "";
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -45px;
+    bottom: -170px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+
+    pointer-events: none;
+}
+
+/* Keep hero content above decorations */
+.admin-rd-header > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Eyebrow */
+.admin-rd-header .admin-rd-eyebrow {
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+/* Hero title */
+.admin-rd-header h1 {
+    margin: 0;
+    color: #ffffff;
+
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Hero description */
+.admin-rd-header p {
+    margin: 9px 0 0;
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Refresh button remains white */
+.admin-rd-header .admin-rd-refresh-btn {
+    position: relative;
+    z-index: 3;
+
+    flex-shrink: 0;
+
+    min-width: 112px;
+    height: 46px;
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-rd-header .admin-rd-refresh-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: #ffffff;
+    color: #1d4ed8;
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.admin-rd-header .admin-rd-refresh-btn:disabled {
+    background: #ffffff;
+    color: #2563eb;
+    opacity: 0.70;
+}
+
+/* =========================================================
+   HERO RESPONSIVE ONLY
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .admin-rd-header {
+        min-height: auto;
+        padding: 28px 24px;
+        border-radius: 22px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-rd-header h1 {
+        font-size: 27px;
+    }
+
+    .admin-rd-header p {
+        font-size: 14px;
+    }
+
+    .admin-rd-header .admin-rd-refresh-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,382 @@
+/* =====================================================
+   RECEIPT OVERLAY
+===================================================== */
+
+.transfer-receipt-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.60);
+
+    backdrop-filter: blur(5px);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   RECEIPT MODAL
+===================================================== */
+
+.receipt-modal {
+    width: 100%;
+
+    max-width: 500px;
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+    box-sizing: border-box;
+
+    animation: receiptPopup 0.25s ease;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.receipt-header {
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.bank-logo {
+    margin-bottom: 5px;
+
+    font-size: 34px;
+}
+
+.bank-name {
+    margin: 0;
+
+    color: #2563eb;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.bank-tagline {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.success-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin: 18px auto 12px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    color: #ffffff;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(34, 197, 94, 0.25);
+}
+
+.receipt-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 22px;
+}
+
+.receipt-title {
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.receipt-details {
+    padding: 6px 0;
+}
+
+.receipt-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.receipt-row span {
+    flex-shrink: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.receipt-row strong {
+    max-width: 62%;
+
+    overflow-wrap: anywhere;
+
+    text-align: right;
+
+    color: #0f172a;
+
+    font-size: 13px;
+}
+
+.receipt-row .amount-success {
+    color: #16a34a;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.receipt-status {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.receipt-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.print-btn,
+.download-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 46px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.print-btn {
+    background: #0f172a;
+}
+
+.print-btn:hover {
+    background: #1e293b;
+}
+
+.download-btn {
+    background: #16a34a;
+}
+
+.download-btn:hover {
+    background: #15803d;
+}
+
+
+.done-btn {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.done-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes receiptPopup {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.94)
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .transfer-receipt-overlay {
+        align-items: flex-end;
+
+        padding: 10px;
+    }
+
+    .receipt-modal {
+        max-width: 100%;
+
+        max-height: 92vh;
+
+        padding: 23px 18px;
+
+        border-radius: 18px;
+    }
+
+    .bank-name {
+        font-size: 21px;
+    }
+
+    .receipt-header h2 {
+        font-size: 19px;
+    }
+
+    .receipt-row {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .receipt-row strong {
+        max-width: 100%;
+
+        text-align: left;
+
+        font-size: 13px;
+    }
+
+    .receipt-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .print-btn,
+    .download-btn,
+    .done-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .receipt-modal {
+        padding: 20px 15px;
+    }
+
+    .success-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+}

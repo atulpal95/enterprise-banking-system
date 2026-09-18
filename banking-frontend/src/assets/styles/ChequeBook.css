@@ -1,0 +1,712 @@
+/* =========================================================
+   CHEQUE BOOK PAGE
+========================================================= */
+
+.cheque-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP SECTION
+========================================================= */
+
+.cheque-top {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    gap: 35px;
+    margin-bottom: 35px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   CHEQUE BOOK CARD
+========================================================= */
+
+.cheque-illustration {
+    width: 100%;
+    min-width: 0;
+}
+
+.cheque-card {
+    width: 100%;
+    min-height: 260px;
+    box-sizing: border-box;
+
+    border-radius: 24px;
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1d4ed8,
+        #3b82f6
+    );
+
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.cheque-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    right: -80px;
+    top: -70px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CHEQUE HEADER
+========================================================= */
+
+.cheque-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.cheque-bank-info {
+    min-width: 0;
+}
+
+.cheque-header h2 {
+    margin: 0;
+
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.cheque-header span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.cheque-header h3 {
+    margin: 0;
+
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CHEQUE BODY
+========================================================= */
+
+.cheque-body {
+    position: relative;
+    z-index: 2;
+}
+
+.cheque-icon {
+    font-size: 42px;
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.cheque-body h1 {
+    margin: 0 0 8px;
+
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.cheque-body p {
+    margin: 0;
+
+    color: #dbeafe;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CHEQUE FOOTER
+========================================================= */
+
+.cheque-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.cheque-footer small {
+    display: block;
+
+    color: #dbeafe;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cheque-footer h4 {
+    margin: 6px 0 0;
+
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CURRENT REQUEST CARD
+========================================================= */
+
+.cheque-status-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+
+    border: 1px solid #eef2ff;
+}
+
+.cheque-status-card h2 {
+    margin: 0 0 15px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   STATUS ROW
+========================================================= */
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eef2ff;
+}
+
+.status-row:last-of-type {
+    border-bottom: none;
+}
+
+.status-row span {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.status-row strong {
+    font-weight: 700;
+
+    color: #111827;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 18px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.status-badge.requested {
+    background: #fff76d;
+    color: #1d4ed8;
+}
+
+.status-badge.approved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-badge.dispatched {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.status-badge.delivered {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.status-badge.rejected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   REQUEST BUTTON
+========================================================= */
+
+.request-btn {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.request-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(37, 99, 235, 0.25);
+}
+
+.request-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   REQUEST HISTORY
+========================================================= */
+
+.history-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 35px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.history-card h2 {
+    margin: 0 0 20px;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   HISTORY TABLE
+========================================================= */
+
+.history-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.history-card table {
+    width: 100%;
+
+    min-width: 500px;
+
+    border-collapse: collapse;
+}
+
+.history-card th {
+    text-align: left;
+
+    padding: 16px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-bottom: 2px solid #eef2ff;
+}
+
+.history-card td {
+    padding: 18px 16px;
+
+    color: #334155;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    font-size: 14px;
+}
+
+.history-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLET
+   769px - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .cheque-top {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 24px;
+    }
+
+    .cheque-card {
+        min-height: 240px;
+
+        padding: 26px;
+    }
+
+    .cheque-header h2 {
+        font-size: 27px;
+    }
+
+    .cheque-header h3 {
+        font-size: 22px;
+    }
+
+    .cheque-body h1 {
+        font-size: 32px;
+    }
+
+    .cheque-status-card {
+        padding: 28px;
+    }
+
+    .cheque-status-card h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   600px - 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .cheque-page {
+        width: 100%;
+    }
+
+    .cheque-top {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        margin-bottom: 24px;
+    }
+
+    .cheque-card {
+        min-height: 230px;
+    }
+
+    .history-card {
+        margin-top: 24px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 599px
+========================================================= */
+
+@media (max-width: 599px) {
+
+    .cheque-page {
+        width: 100%;
+    }
+
+    /* -------------------------
+       Cheque Card
+    ------------------------- */
+
+    .cheque-card {
+        min-height: 185px;
+
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .cheque-card::before {
+        width: 150px;
+        height: 150px;
+
+        right: -55px;
+        top: -55px;
+    }
+
+    .cheque-header {
+        gap: 10px;
+    }
+
+    .cheque-header h2 {
+        font-size: 20px;
+    }
+
+    .cheque-header span {
+        margin-top: 4px;
+
+        font-size: 9px;
+    }
+
+    .cheque-header h3 {
+        font-size: 17px;
+
+        text-align: right;
+    }
+
+    .cheque-icon {
+        font-size: 27px;
+
+        margin-bottom: 5px;
+    }
+
+    .cheque-body h1 {
+        font-size: 24px;
+
+        margin-bottom: 4px;
+    }
+
+    .cheque-body p {
+        font-size: 11px;
+    }
+
+    .cheque-footer {
+        gap: 10px;
+    }
+
+    .cheque-footer small {
+        font-size: 7px;
+    }
+
+    .cheque-footer h4 {
+        margin-top: 3px;
+
+        font-size: 11px;
+    }
+
+
+    /* -------------------------
+       Current Request
+    ------------------------- */
+
+    .cheque-status-card {
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .cheque-status-card h2 {
+        margin-bottom: 8px;
+
+        font-size: 22px;
+    }
+
+    .status-row {
+        padding: 13px 0;
+
+        gap: 12px;
+    }
+
+    .status-row span {
+        font-size: 12px;
+    }
+
+    .status-row strong {
+        font-size: 12px;
+    }
+
+    .status-badge {
+        padding: 5px 11px;
+
+        font-size: 9px;
+    }
+
+    .request-btn {
+        margin-top: 20px;
+
+        padding: 12px;
+
+        border-radius: 11px;
+
+        font-size: 13px;
+    }
+
+
+    /* -------------------------
+       History
+    ------------------------- */
+
+    .history-card {
+        margin-top: 24px;
+
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .history-card h2 {
+        margin-bottom: 14px;
+
+        font-size: 21px;
+    }
+
+    .history-card table {
+        min-width: 400px;
+    }
+
+    .history-card th {
+        padding: 11px 10px;
+
+        font-size: 11px;
+    }
+
+    .history-card td {
+        padding: 13px 10px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cheque-card {
+        min-height: 175px;
+
+        padding: 17px;
+    }
+
+    .cheque-header h2 {
+        font-size: 18px;
+    }
+
+    .cheque-header h3 {
+        font-size: 15px;
+    }
+
+    .cheque-body h1 {
+        font-size: 22px;
+    }
+
+    .cheque-body p {
+        font-size: 10px;
+    }
+
+    .cheque-status-card,
+    .history-card {
+        padding: 17px;
+    }
+}

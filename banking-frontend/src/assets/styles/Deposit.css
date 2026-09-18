@@ -1,0 +1,326 @@
+/* =========================================================
+   Deposit Page
+   Optimized for 100% browser zoom
+   Desktop / Laptop / Tablet / Mobile responsive
+   ========================================================= */
+
+.deposit-page {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 20px 20px;
+}
+
+/* Main card */
+.deposit-card {
+    width: min(820px, 100%);
+    margin: 20px auto 0;
+    padding: 26px 30px 22px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    border-radius: 20px;
+
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+}
+
+/* Heading */
+.deposit-card h2 {
+    margin: 0 0 4px;
+    color: #0f172a;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+.deposit-card p {
+    margin: 0 0 18px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   Available Balance
+   ========================================================= */
+
+.current-balance {
+    min-height: 58px;
+    margin: 0 0 17px;
+    padding: 12px 18px;
+    box-sizing: border-box;
+
+    background: #ecfeff;
+    border-left: 5px solid #0891b2;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.current-balance span {
+    color: #155e75;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.current-balance strong {
+    color: #0f172a;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   Form
+   ========================================================= */
+
+.deposit-card .form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 14px;
+}
+
+.deposit-card label {
+    margin: 0 0 7px;
+    color: #1e293b;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.deposit-card input {
+    width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+
+    padding: 0 15px;
+
+    color: #0f172a;
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 12px;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.deposit-card input::placeholder {
+    color: #94a3b8;
+}
+
+.deposit-card input:hover {
+    border-color: #cbd5e1;
+}
+
+.deposit-card input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.11);
+}
+
+/* Remove number input spinner for a cleaner banking UI */
+.deposit-card input[type="number"]::-webkit-inner-spin-button,
+.deposit-card input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+
+
+/* =========================================================
+   Deposit Button
+   ========================================================= */
+
+.deposit-btn {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.deposit-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 11px 22px rgba(37, 99, 235, 0.28);
+}
+
+.deposit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.deposit-btn:disabled {
+    background: #94a3b8;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* =========================================================
+   Laptop / smaller desktop
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .deposit-page {
+        padding: 12px 18px 16px;
+    }
+
+    .deposit-card {
+        margin-top: 14px;
+        padding: 24px 28px 20px;
+    }
+
+    .deposit-card h2 {
+        font-size: 32px;
+    }
+
+    .deposit-card p {
+        margin-bottom: 16px;
+    }
+
+    .current-balance {
+        margin-bottom: 15px;
+    }
+}
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .deposit-page {
+        padding: 12px 14px 18px;
+    }
+
+    .deposit-card {
+        width: 100%;
+        margin: 8px auto 0;
+        padding: 22px 20px 20px;
+        border-radius: 18px;
+    }
+
+    .deposit-card h2 {
+        font-size: 29px;
+        letter-spacing: -0.4px;
+    }
+
+    .deposit-card p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .current-balance {
+        min-height: 56px;
+        padding: 11px 14px;
+        gap: 12px;
+    }
+
+    .current-balance span {
+        font-size: 15px;
+    }
+
+    .current-balance strong {
+        font-size: 21px;
+    }
+
+    .deposit-card input {
+        height: 47px;
+        font-size: 16px;
+    }
+
+    .deposit-btn {
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .deposit-page {
+        padding: 8px 10px 14px;
+    }
+
+    .deposit-card {
+        margin-top: 5px;
+        padding: 20px 16px 17px;
+        border-radius: 16px;
+    }
+
+    .deposit-card h2 {
+        font-size: 26px;
+    }
+
+    .deposit-card p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 14px;
+    }
+
+    .current-balance {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        padding: 11px 13px;
+        margin-bottom: 14px;
+    }
+
+    .current-balance strong {
+        font-size: 20px;
+    }
+
+    .deposit-card label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .deposit-card input {
+        height: 46px;
+        padding: 0 13px;
+        font-size: 16px;
+    }
+
+    .deposit-card .form-group {
+        margin-bottom: 13px;
+    }
+
+    .deposit-btn {
+        height: 47px;
+        font-size: 16px;
+        border-radius: 11px;
+    }
+}

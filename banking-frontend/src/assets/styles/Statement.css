@@ -1,0 +1,374 @@
+/* ==========================================
+   Statement Page
+========================================== */
+
+.statement-page {
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.statement-header {
+    margin-bottom: 25px;
+}
+
+.statement-header h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.statement-header p {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   Main Statement Card
+========================================== */
+
+.statement-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 30px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.statement-card-header {
+    margin-bottom: 25px;
+}
+
+.statement-card-header h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.statement-card-header p {
+    margin: 7px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   Form
+========================================== */
+
+.statement-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    font-size: 15px;
+    color: #0f172a;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+
+/* ==========================================
+   Error
+========================================== */
+
+.statement-error {
+    margin-bottom: 18px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   Generate Button
+========================================== */
+
+.generate-btn {
+    width: 100%;
+
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.generate-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ==========================================
+   Statement Information
+========================================== */
+
+.statement-history {
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    border: 1px solid #edf2f7;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    box-sizing: border-box;
+}
+
+.history-header {
+    margin-bottom: 25px;
+}
+
+.history-header h3 {
+    margin: 0;
+
+    font-size: 24px;
+
+    color: #0f172a;
+}
+
+.history-header p {
+    margin: 7px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   Info Grid
+========================================== */
+
+.statement-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.statement-info-item {
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.statement-info-item span {
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.statement-info-item strong {
+    color: #0f172a;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .statement-page {
+        padding: 24px;
+    }
+
+    .statement-header h2 {
+        font-size: 30px;
+    }
+
+    .statement-card,
+    .statement-history {
+        padding: 24px;
+    }
+
+}
+
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 768px) {
+
+    .statement-page {
+        padding: 16px;
+    }
+
+    .statement-header {
+        margin-bottom: 18px;
+    }
+
+    .statement-header h2 {
+        font-size: 25px;
+    }
+
+    .statement-header p {
+        font-size: 14px;
+    }
+
+    .statement-card,
+    .statement-history {
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+    .statement-card-header h3 {
+        font-size: 19px;
+    }
+
+    .statement-form {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .generate-btn {
+        padding: 13px 18px;
+    }
+
+    .statement-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   Small Mobile
+========================================== */
+
+@media (max-width: 420px) {
+
+    .statement-page {
+        padding: 12px;
+    }
+
+    .statement-card,
+    .statement-history {
+        padding: 16px;
+
+        border-radius: 14px;
+    }
+
+    .statement-header h2 {
+        font-size: 22px;
+    }
+
+    .statement-header p {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        padding: 12px 13px;
+
+        font-size: 14px;
+    }
+
+    .generate-btn {
+        font-size: 14px;
+    }
+
+}

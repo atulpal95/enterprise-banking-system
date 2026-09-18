@@ -1,0 +1,607 @@
+/* ===========================
+   MODAL OVERLAY
+=========================== */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(5px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeIn .3s ease;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.profile-modal{
+
+    width:900px;
+    max-width:95%;
+    max-height:90vh;
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    animation:scaleIn .3s ease;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.modal-header h2{
+
+    margin:0;
+
+    color:#1e293b;
+
+}
+
+.modal-header button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.image-upload{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.modal-avatar{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #2563eb;
+
+}
+
+.upload-label{
+
+    margin-top:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.modal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.form-group input{
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#111827;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.save-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .modal-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .modal-footer{
+
+        flex-direction:column;
+
+    }
+
+}
+
+
+/* =====================================
+   CHANGE PASSWORD MODAL
+===================================== */
+
+.password-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    backdrop-filter:blur(6px);
+
+}
+
+.password-modal{
+    width: 550px;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+    animation: passwordPopup .25s ease;
+}
+
+@keyframes passwordPopup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.password-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.password-header h2{
+
+    margin:0;
+
+    font-size:28px;
+
+    color:#0f172a;
+
+    font-weight:700;
+
+}
+
+.close-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f1f5f9;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    background:#e2e8f0;
+
+}
+
+.password-note{
+    margin-bottom:18px;
+    font-size:15px;
+    line-height:1.5;
+}
+
+.password-group{
+
+    margin-bottom:16px;
+
+}
+
+.password-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.password-input{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:1px solid #dbe3ec;
+
+    border-radius:14px;
+
+    padding:0 16px;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.password-input:focus-within{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+.password-input svg{
+
+    color:#2563eb;
+
+    font-size:18px;
+
+}
+
+.password-input input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:16px 0;
+
+    font-size:15px;
+
+    background:transparent;
+
+}
+
+.password-input button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:#64748b;
+
+    font-size:18px;
+
+}
+
+.password-footer{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+
+    position:sticky;
+    bottom:0;
+
+    background:#fff;
+    padding-top:15px;
+}
+
+.cancel-btn{
+
+    padding:13px 26px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e2e8f0;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.cancel-btn:hover{
+
+    background:#cbd5e1;
+
+}
+
+.password-footer .save-btn{
+
+    padding:13px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.password-footer .save-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+/* After */
+
+
+.password-strength{
+    display:flex;
+    align-items:center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.strength{
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.strength.weak{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.strength.medium{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.strength.strong{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.password-checklist{
+
+    margin-top:15px;
+
+}
+
+.password-checklist p{
+    margin:4px 0;
+    font-size:14px;
+}
+
+.password-checklist .valid{
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}

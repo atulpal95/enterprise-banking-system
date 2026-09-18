@@ -1,0 +1,1550 @@
+   /*
+   PAL ENTERPRISE BANK
+   AUTHENTICATION PAGE
+   ========================================================= */
+
+:root {
+    --peb-blue: #0d6efd;
+    --peb-blue-dark: #1557c0;
+    --peb-navy: #163a63;
+    --peb-gold: #f4b400;
+    --peb-bg: #f1f5fb;
+    --peb-text: #18243a;
+    --peb-muted: #6b7c96;
+    --peb-white: #ffffff;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.auth-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 72px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(13, 110, 253, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8faff 0%,
+            #eef3fb 100%
+        );
+
+    color: var(--peb-text);
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.auth-navbar {
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 42px;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border-bottom:
+        1px solid rgba(22, 58, 99, 0.08);
+
+    box-shadow:
+        0 4px 18px rgba(22, 58, 99, 0.07);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.auth-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+.auth-brand-logo {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1769e8,
+            #124ca8
+        );
+
+    border:
+        2px solid var(--peb-gold);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 15px rgba(13, 110, 253, 0.20);
+}
+
+.auth-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-brand-name {
+    color: var(--peb-navy);
+
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+.auth-brand-tagline {
+    margin-top: 3px;
+
+    color: var(--peb-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ADMIN BUTTON
+   ========================================================= */
+
+.auth-navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.auth-nav-button {
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 21px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #2558dc
+        );
+
+    color: white !important;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 7px 18px rgba(13, 110, 253, 0.23);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-nav-button:hover {
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(13, 110, 253, 0.30);
+}
+
+
+/* =========================================================
+   MAIN DESKTOP
+   ========================================================= */
+
+.auth-main {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 34px 42px 26px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(400px, 520px);
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   BANK ABOUT CARD
+   ========================================================= */
+
+.auth-about {
+    width: 100%;
+
+    min-height: 560px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    padding: 48px;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255, 255, 255, 0.13),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #1769e8 0%,
+            #0d63e8 50%,
+            #1451b9 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        0 20px 45px rgba(13, 71, 161, 0.20);
+}
+
+.auth-about::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: -110px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.035),
+        0 0 0 90px rgba(255, 255, 255, 0.025);
+}
+
+.auth-about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    left: -210px;
+    bottom: -210px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+.auth-about-content {
+    width: 100%;
+    max-width: 760px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.auth-logo-large {
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #246bd0,
+            #174a98
+        );
+
+    border:
+        3px solid var(--peb-gold);
+
+    color: white;
+
+    font-size: 27px;
+    font-weight: 900;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   ABOUT TEXT
+   ========================================================= */
+
+.auth-about h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(38px, 4vw, 54px);
+
+    line-height: 1.03;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.auth-about h1 span {
+    display: block;
+
+    margin-top: 5px;
+}
+
+.auth-about-tagline {
+    margin: 14px 0 0;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.auth-about-line {
+    width: 72px;
+    height: 3px;
+
+    margin: 20px 0;
+
+    border-radius: 20px;
+
+    background: var(--peb-gold);
+}
+
+.auth-about-description {
+    max-width: 720px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.89);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.auth-features {
+    width: 100%;
+
+    margin-top: 27px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 11px;
+}
+
+.auth-feature {
+    padding: 14px 13px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(8px);
+}
+
+.auth-feature-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    color: white;
+
+    font-size: 16px;
+}
+
+.auth-feature h3 {
+    margin: 0 0 5px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.auth-feature p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CUSTOMER LOGIN BUTTON
+   ========================================================= */
+
+.mobile-login-button {
+    display: none;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    padding: 34px 38px 30px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border:
+        1px solid rgba(22, 58, 99, 0.07);
+
+    box-shadow:
+        0 20px 50px rgba(30, 58, 95, 0.14);
+
+    position: relative;
+}
+
+
+/* =========================================================
+   MOBILE BACK BUTTON
+   ========================================================= */
+
+.mobile-back-button {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--peb-blue);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGIN ICON
+   ========================================================= */
+
+.mobile-login-icon {
+    display: none;
+}
+
+
+/* =========================================================
+   LOGIN HEADER
+   ========================================================= */
+
+.auth-card-header {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.auth-card-header h2 {
+    margin: 0;
+
+    color: var(--peb-text);
+
+    font-size: 29px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.auth-card-header p {
+    margin: 8px 0 0;
+
+    color: var(--peb-muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.auth-form {
+    width: 100%;
+}
+
+.auth-form .text-danger {
+    display: block;
+
+    margin-top: -7px;
+    margin-bottom: 8px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.auth-input-field {
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+.auth-input-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--peb-text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.auth-input-wrapper {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    overflow: hidden;
+
+    background: white;
+
+    border:
+        1px solid #d9e1ec;
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-input-wrapper:focus-within {
+    border-color: var(--peb-blue);
+
+    box-shadow:
+        0 0 0 3px rgba(13, 110, 253, 0.10);
+}
+
+.auth-input-icon {
+    width: 50px;
+    min-width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
+    color: #66758b;
+
+    border-right:
+        1px solid #e3e8ef;
+
+    font-size: 15px;
+}
+
+.auth-input {
+    flex: 1;
+
+    width: 100%;
+    min-width: 0;
+
+    height: 50px;
+
+    padding: 0 14px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--peb-text);
+
+    font-size: 14px;
+}
+
+.auth-input::placeholder {
+    color: #9aa7b8;
+}
+
+
+/* =========================================================
+   PASSWORD
+   ========================================================= */
+
+.auth-password-wrapper {
+    position: relative;
+}
+
+.auth-password-wrapper .auth-input {
+    padding-right: 48px;
+}
+
+.auth-password-toggle {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 48px !important;
+    min-width: 48px;
+
+    height: 50px;
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 !important;
+
+    border: none !important;
+
+    background: transparent !important;
+
+    color: #718096;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+}
+
+.auth-password-toggle:hover {
+    color: var(--peb-blue);
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.auth-options {
+    width: 100%;
+
+    margin: 7px 0 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.auth-remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #45556e;
+
+    font-size: 12px;
+}
+
+.auth-remember input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: var(--peb-blue);
+}
+
+.auth-forgot {
+    color: var(--peb-blue);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.auth-card .btn,
+.auth-card button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.auth-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 20px 0 15px;
+
+    color: #9aa8ba;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e1e6ee;
+}
+
+
+/* =========================================================
+   SECONDARY
+   ========================================================= */
+
+.auth-secondary {
+    text-align: center;
+
+    color: var(--peb-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.auth-secondary-row {
+    margin-top: 5px;
+}
+
+.auth-secondary a {
+    color: var(--peb-blue);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.auth-footer {
+    width: 100%;
+
+    min-height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 14px 20px;
+
+    color: #71829a;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.40);
+
+    border-top:
+        1px solid rgba(22, 58, 99, 0.05);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .auth-navbar {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .auth-main {
+        padding:
+            28px
+            28px
+            24px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(360px, 450px);
+
+        gap: 26px;
+    }
+
+    .auth-about {
+        padding: 38px;
+
+        min-height: 520px;
+    }
+
+    .auth-about h1 {
+        font-size: 42px;
+    }
+
+    .auth-card {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .auth-main {
+        max-width: 720px;
+
+        grid-template-columns: 1fr;
+
+        padding: 26px 22px;
+
+        gap: 22px;
+    }
+
+    .auth-about {
+        min-height: auto;
+    }
+
+    .auth-card {
+        max-width: 560px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body,
+    #root {
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .auth-page {
+        min-height: 100svh;
+
+        padding-top: 62px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #f4f7fc,
+                #eaf0f9
+            );
+    }
+
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+
+    .auth-navbar {
+        height: 62px;
+        min-height: 62px;
+
+        padding: 8px 12px;
+    }
+
+    .auth-brand {
+        gap: 8px;
+    }
+
+    .auth-brand-logo {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+    .auth-brand-name {
+        font-size: 12px;
+    }
+
+    .auth-brand-tagline {
+        display: none;
+    }
+
+    .auth-nav-button {
+        min-height: 36px;
+
+        padding: 0 10px;
+
+        border-radius: 9px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
+
+    .auth-main {
+        width: 100%;
+        max-width: 100%;
+
+        min-height:
+            calc(100svh - 62px - 58px);
+
+        padding: 14px 10px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE BANK SCREEN
+       ===================================================== */
+
+    .auth-about {
+        width: 100%;
+
+        min-height:
+            calc(100svh - 62px - 52px - 28px);
+
+        padding:
+            28px
+            17px;
+
+        border-radius: 20px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .auth-about-content {
+        width: 100%;
+        max-width: 500px;
+    }
+
+
+    /* LOGO */
+
+    .auth-logo-large {
+        width: 68px;
+        height: 68px;
+
+        margin:
+            0 auto
+            17px;
+
+        border-radius: 17px;
+
+        font-size: 22px;
+    }
+
+
+    /* BANK NAME */
+
+    .auth-about h1 {
+        font-size: 30px;
+
+        line-height: 1.04;
+
+        letter-spacing: -0.5px;
+    }
+
+    .auth-about h1 span {
+        margin-top: 5px;
+    }
+
+    .auth-about-tagline {
+        margin-top: 11px;
+
+        font-size: 12px;
+    }
+
+    .auth-about-line {
+        width: 52px;
+        height: 3px;
+
+        margin:
+            15px
+            auto;
+    }
+
+    .auth-about-description {
+        max-width: 390px;
+
+        margin: 0 auto;
+
+        font-size: 10px;
+
+        line-height: 1.65;
+    }
+
+
+    /* FEATURES */
+
+    .auth-features {
+        margin-top: 22px;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 6px;
+    }
+
+    .auth-feature {
+        padding: 10px 5px;
+
+        border-radius: 9px;
+    }
+
+    .auth-feature-icon {
+        width: 30px;
+        height: 30px;
+
+        margin:
+            0 auto
+            6px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+    .auth-feature h3 {
+        margin: 0;
+
+        font-size: 8px;
+
+        line-height: 1.25;
+    }
+
+    .auth-feature p {
+        display: none;
+    }
+
+
+    /* =====================================================
+       CUSTOMER LOGIN BUTTON
+       ===================================================== */
+
+    .mobile-login-button {
+        width: 100%;
+
+        min-height: 48px;
+
+        margin-top: 22px;
+
+        padding: 0 16px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        border-radius: 11px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffffff,
+                #f7faff
+            );
+
+        color: var(--peb-blue);
+
+        font-size: 13px;
+        font-weight: 700;
+
+        box-shadow:
+            0 9px 22px rgba(0, 0, 0, 0.16);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .mobile-login-button span {
+        flex: 1;
+
+        text-align: center;
+    }
+
+    .mobile-login-button > i {
+        width: 20px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       LOGIN MODE
+       ===================================================== */
+
+    .auth-main.mobile-login-mode {
+        min-height:
+            calc(100svh - 62px - 58px);
+
+        padding:
+            14px
+            10px;
+    }
+
+    .auth-main.mobile-login-mode .auth-about {
+        display: none;
+    }
+
+    .auth-main.mobile-login-mode .auth-card {
+        display: block;
+    }
+
+
+    /* =====================================================
+       LOGIN CARD
+       ===================================================== */
+
+    .auth-card {
+        display: none;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding:
+            19px
+            15px
+            22px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 14px 35px rgba(30, 58, 95, 0.13);
+    }
+
+    /*
+       MOBILE LOGIN:
+       The login card stays hidden until Customer Login
+       is clicked and .mobile-login-mode is added.
+    */
+    .auth-main.mobile-login-mode .auth-card {
+        display: block;
+    }
+
+
+    /* =====================================================
+       BACK BUTTON
+       ===================================================== */
+
+    .mobile-back-button {
+        width: auto !important;
+
+        margin-bottom: 13px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 5px 0;
+
+        color: var(--peb-blue);
+
+        font-size: 11px;
+        font-weight: 600;
+
+        text-align: left;
+    }
+
+    .mobile-back-button:hover {
+        color: var(--peb-blue-dark);
+    }
+
+
+    /* =====================================================
+       LOGIN ICON
+       ===================================================== */
+
+    .mobile-login-icon {
+        width: 46px;
+        height: 46px;
+
+        margin:
+            0 auto
+            10px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 13px;
+
+        background:
+            rgba(13, 110, 253, 0.09);
+
+        color: var(--peb-blue);
+
+        font-size: 18px;
+    }
+
+
+    /* =====================================================
+       LOGIN HEADER
+       ===================================================== */
+
+    .auth-card-header {
+        margin-bottom: 18px;
+    }
+
+    .auth-card-header h2 {
+        font-size: 22px;
+    }
+
+    .auth-card-header p {
+        margin-top: 6px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       INPUTS
+       ===================================================== */
+
+    .auth-input-field {
+        margin-bottom: 13px;
+    }
+
+    .auth-input-label {
+        margin-bottom: 5px;
+
+        font-size: 11px;
+    }
+
+    .auth-input-wrapper {
+        min-height: 44px;
+
+        border-radius: 8px;
+    }
+
+    .auth-input-icon {
+        width: 40px;
+        min-width: 40px;
+
+        font-size: 12px;
+    }
+
+    .auth-input {
+        height: 42px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    .auth-password-wrapper .auth-input {
+        padding-right: 42px;
+    }
+
+    .auth-password-toggle {
+        width: 42px !important;
+        min-width: 42px;
+
+        height: 42px;
+    }
+
+
+    /* =====================================================
+       OPTIONS
+       ===================================================== */
+
+    .auth-options {
+        margin:
+            5px
+            0
+            14px;
+    }
+
+    .auth-remember,
+    .auth-forgot {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       DIVIDER
+       ===================================================== */
+
+    .auth-divider {
+        margin:
+            16px
+            0
+            13px;
+
+        font-size: 10px;
+    }
+
+    .auth-secondary {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .auth-footer {
+        min-height: 58px;
+
+        padding:
+            14px
+            10px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .auth-about {
+        padding:
+            23px
+            13px;
+    }
+
+    .auth-logo-large {
+        width: 61px;
+        height: 61px;
+
+        margin-bottom: 14px;
+
+        font-size: 20px;
+    }
+
+    .auth-about h1 {
+        font-size: 27px;
+    }
+
+    .auth-about-description {
+        font-size: 9px;
+    }
+
+    .auth-features {
+        margin-top: 18px;
+    }
+
+    .auth-feature {
+        padding: 8px 4px;
+    }
+
+    .auth-feature-icon {
+        width: 27px;
+        height: 27px;
+
+        font-size: 11px;
+    }
+
+    .auth-feature h3 {
+        font-size: 7px;
+    }
+
+    .mobile-login-button {
+        min-height: 46px;
+
+        margin-top: 19px;
+
+        font-size: 12px;
+    }
+}
+
+
+
+
+

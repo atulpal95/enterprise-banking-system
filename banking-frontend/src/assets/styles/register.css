@@ -1,0 +1,2804 @@
+/* =========================================================
+   CUSTOMER REGISTER PAGE
+   ========================================================= */
+
+.register-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4f7fc 0%,
+            #eaf0f9 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.register-navbar {
+    width: 100%;
+    height: 92px;
+    min-height: 92px;
+
+    padding: 14px 54px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5edf7;
+
+    box-shadow:
+        0 3px 14px rgba(30, 60, 100, 0.07);
+
+    z-index: 99999;
+}
+
+.register-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 92px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4f7fc 0%,
+            #eaf0f9 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+.register-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    text-decoration: none;
+}
+
+
+.register-brand-logo {
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #ffc400;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1769e8,
+            #1557c4
+        );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px rgba(20, 91, 200, 0.20);
+}
+
+
+.register-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.register-brand-name {
+    color: #1b3e69;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.register-brand-tagline {
+    color: #7387a4;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+}
+
+
+.register-navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+
+.register-admin-button,
+.register-mobile-nav-button {
+    min-height: 54px;
+
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769e8,
+            #2458d8
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(36, 88, 216, 0.20);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.register-admin-button:hover,
+.register-mobile-nav-button:hover {
+    color: white;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 25px rgba(36, 88, 216, 0.28);
+}
+
+
+/* Mobile navbar button hidden on desktop */
+
+.register-mobile-nav-button {
+    display: none;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.register-main {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 26px 42px 30px;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(500px, 590px);
+
+    gap: 34px;
+
+    align-items: start;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   ABOUT PANEL
+   ========================================================= */
+
+.register-about {
+    width: 100%;
+
+    min-height: 690px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #176be8 0%,
+            #1262dc 55%,
+            #1553ba 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        0 14px 35px rgba(20, 70, 140, 0.15);
+}
+
+
+.register-about::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: -210px;
+    right: -130px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 0 0 34px rgba(255,255,255,0.035),
+        0 0 0 70px rgba(255,255,255,0.025);
+}
+
+
+.register-about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: -140px;
+    bottom: -140px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+
+.register-about-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 48px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ABOUT LOGO
+   ========================================================= */
+
+.register-logo-large {
+    width: 92px;
+    height: 92px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #ffc400;
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1768db,
+            #154f9f
+        );
+
+    color: white;
+
+    font-size: 27px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ABOUT HEADING
+   ========================================================= */
+
+.register-about h1 {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    font-size: clamp(44px, 4vw, 62px);
+
+    font-weight: 800;
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+}
+
+
+.register-about h1 span {
+    margin-top: 7px;
+}
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.register-about-tagline {
+    margin: 22px 0 0;
+
+    color: white;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+.register-about-line {
+    width: 85px;
+    height: 4px;
+
+    margin: 22px 0;
+
+    border-radius: 10px;
+
+    background: #ffc400;
+}
+
+
+.register-about-description {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.94);
+
+    font-size: 16px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.register-features {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.register-feature {
+    padding: 16px 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.09);
+}
+
+
+.register-feature-icon {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.15);
+
+    font-size: 17px;
+}
+
+
+.register-feature h3 {
+    margin: 0 0 5px;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.register-feature p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MOBILE REGISTER BUTTON
+   ========================================================= */
+
+.register-mobile-card-button {
+    display: none;
+}
+
+
+/* =========================================================
+   REGISTER CARD
+   ========================================================= */
+
+.register-card {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 34px 38px 28px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 14px 35px rgba(30, 60, 100, 0.12);
+
+    align-self: start;
+}
+
+
+/* Mobile back button hidden desktop */
+
+.register-mobile-back {
+    display: none;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.register-card-header {
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+
+.register-card-header h2 {
+    margin: 0;
+
+    color: #14233d;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+.register-card-header p {
+    margin: 9px 0 0;
+
+    color: #70839f;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.register-form {
+    width: 100%;
+}
+
+
+.register-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.register-half {
+    min-width: 0;
+}
+
+
+.register-form .text-danger,
+.register-half .text-danger {
+    display: block;
+
+    margin-top: -10px;
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+   ========================================================= */
+
+.register-login-link {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #71849e;
+
+    font-size: 15px;
+}
+
+
+.register-login-link span {
+    display: block;
+
+    margin-bottom: 6px;
+}
+
+
+.register-login-link a {
+    color: #0868ed;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.register-login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.register-footer {
+    min-height: 62px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f7fc;
+
+    border-top: 1px solid #e3eaf4;
+
+    color: #607895;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .register-navbar {
+        padding-left: 28px;
+        padding-right: 28px;
+
+        min-height: 100svh;
+       padding-top: 62px;
+    }
+
+    .register-main {
+        padding: 24px 28px 28px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(450px, 520px);
+
+        gap: 26px;
+    }
+
+    .register-about {
+        min-height: 650px;
+    }
+
+    .register-about-content {
+        padding: 40px;
+    }
+
+    .register-about h1 {
+        font-size: 46px;
+    }
+
+    .register-card {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .register-main {
+        grid-template-columns: 1fr;
+
+        max-width: 760px;
+
+        padding: 24px 22px 30px;
+
+        gap: 22px;
+    }
+
+    .register-about {
+        min-height: auto;
+    }
+
+    .register-card {
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body,
+    #root {
+        width: 100%;
+
+        min-height: 100%;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    .register-page {
+        min-height: 100svh;
+    }
+
+
+    /* =====================================================
+       MOBILE NAVBAR
+       ===================================================== */
+
+  .register-navbar {
+    width: 100%;
+
+    min-height: 62px;
+    height: 62px;
+
+    padding: 8px 12px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 99999;
+}
+
+    .register-brand {
+        gap: 8px;
+    }
+
+
+    .register-brand-logo {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+
+    .register-brand-name {
+        font-size: 12px;
+    }
+
+
+    .register-brand-tagline {
+        display: none;
+    }
+
+
+    /* IMPORTANT:
+       Admin Login is hidden on mobile.
+       Register becomes the corner button.
+    */
+
+    .register-admin-button {
+        display: none;
+    }
+
+
+    .register-mobile-nav-button {
+        display: inline-flex;
+
+        min-height: 36px;
+
+        padding: 0 11px;
+
+        border-radius: 9px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
+
+    .register-main {
+        width: 100%;
+        max-width: 100%;
+
+        min-height:
+            calc(100svh - 62px - 62px);
+
+        padding: 10px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       BANK ABOUT SCREEN
+       ===================================================== */
+
+    .register-about {
+        width: 100%;
+
+        min-height:
+            calc(100svh - 62px - 62px - 20px);
+
+        padding: 0;
+
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        order: 1;
+    }
+
+
+    .register-about-content {
+        width: 100%;
+        max-width: 500px;
+
+        padding: 28px 17px;
+
+        box-sizing: border-box;
+    }
+
+
+    .register-logo-large {
+        width: 68px;
+        height: 68px;
+
+        margin:
+            0 auto
+            17px;
+
+        border-radius: 17px;
+
+        font-size: 21px;
+    }
+
+
+    .register-about h1 {
+        font-size: 30px;
+
+        line-height: 1.04;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .register-about h1 span {
+        margin-top: 5px;
+    }
+
+
+    .register-about-tagline {
+        margin-top: 11px;
+
+        font-size: 12px;
+    }
+
+
+    .register-about-line {
+        width: 52px;
+        height: 3px;
+
+        margin:
+            15px auto;
+    }
+
+
+    .register-about-description {
+        max-width: 390px;
+
+        margin: 0 auto;
+
+        font-size: 10px;
+
+        line-height: 1.65;
+    }
+
+
+    /* FEATURES */
+
+    .register-features {
+        margin-top: 22px;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 6px;
+    }
+
+
+    .register-feature {
+        padding: 10px 5px;
+
+        border-radius: 9px;
+    }
+
+
+    .register-feature-icon {
+        width: 30px;
+        height: 30px;
+
+        margin:
+            0 auto
+            6px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .register-feature h3 {
+        margin: 0;
+
+        font-size: 8px;
+
+        line-height: 1.25;
+    }
+
+
+    .register-feature p {
+        display: none;
+    }
+
+
+    /* =====================================================
+       MOBILE REGISTER BUTTON
+       ===================================================== */
+
+    .register-mobile-card-button {
+        width: 100%;
+
+        min-height: 48px;
+
+        margin-top: 22px;
+
+        padding: 0 16px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        border: none;
+
+        border-radius: 11px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffffff,
+                #f7faff
+            );
+
+        color: #0d6efd;
+
+        font-size: 13px;
+        font-weight: 700;
+
+        box-shadow:
+            0 9px 22px rgba(0, 0, 0, 0.16);
+
+        cursor: pointer;
+    }
+
+
+    .register-mobile-card-button span {
+        flex: 1;
+
+        text-align: center;
+    }
+
+
+    .register-mobile-card-button > i {
+        width: 20px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       REGISTER MODE
+       ===================================================== */
+
+    .register-main.mobile-register-mode {
+        min-height:
+            calc(100svh - 62px - 62px);
+
+        padding: 10px;
+    }
+
+
+    .register-main.mobile-register-mode .register-about {
+        display: none;
+    }
+
+
+    .register-main.mobile-register-mode .register-card {
+        display: block;
+    }
+
+
+    /* =====================================================
+       REGISTER CARD
+       ===================================================== */
+
+    .register-card {
+        display: none;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding:
+            18px
+            15px
+            22px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 14px 35px rgba(30, 58, 95, 0.13);
+
+        order: 2;
+    }
+
+
+    /* =====================================================
+       BACK TO BANK
+       ===================================================== */
+
+    .register-mobile-back {
+        width: auto;
+
+        margin-bottom: 12px;
+
+        padding: 5px 0;
+
+        border: none;
+
+        background: transparent;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        color: #0d6efd;
+
+        font-size: 11px;
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+
+
+    .register-mobile-back:hover {
+        color: #084298;
+    }
+
+
+    /* =====================================================
+       REGISTER HEADER
+       ===================================================== */
+
+    .register-card-header {
+        margin-bottom: 18px;
+    }
+
+
+    .register-card-header h2 {
+        font-size: 22px;
+    }
+
+
+    .register-card-header p {
+        margin-top: 6px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       MOBILE FORM
+       ===================================================== */
+
+    .register-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .register-card .register-form {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .register-footer {
+        min-height: 62px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .register-navbar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .register-brand-name {
+        font-size: 11px;
+    }
+
+
+    .register-mobile-nav-button {
+        padding: 0 9px;
+
+        font-size: 9px;
+    }
+
+
+    .register-main {
+        padding: 8px;
+    }
+
+
+    .register-about-content {
+        padding:
+            24px
+            14px;
+    }
+
+
+    .register-about h1 {
+        font-size: 28px;
+    }
+
+
+    .register-card {
+        padding:
+            17px
+            13px
+            20px;
+    }
+}
+
+
+/* =========================================================
+   PAL ENTERPRISE BANK
+   FINAL AUTH RESPONSIVE FIX
+   ========================================================= */
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.auth-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 76px;
+
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6f9fd 0%,
+            #edf3fa 100%
+        );
+}
+
+
+/* =========================================================
+   FIXED NAVBAR
+   ========================================================= */
+
+.auth-navbar {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 76px;
+    min-height: 76px;
+
+    padding: 10px 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    z-index: 99999;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border-bottom:
+        1px solid #e5ebf3;
+
+    box-shadow:
+        0 3px 14px rgba(15, 42, 75, 0.07);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   NAVBAR BRAND
+   ========================================================= */
+
+.auth-brand {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+}
+
+
+.auth-brand-logo {
+    width: 46px;
+    height: 46px;
+
+    min-width: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid var(--peb-gold);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1769e0,
+            #124ca8
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 13px
+        rgba(13, 110, 253, 0.18);
+}
+
+
+.auth-brand-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.auth-brand-name {
+    color: var(--peb-navy);
+
+    font-size: 20px;
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    white-space: nowrap;
+}
+
+
+.auth-brand-tagline {
+    margin-top: 4px;
+
+    color: var(--peb-muted);
+
+    font-size: 11px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   NAVBAR ACTION
+   ========================================================= */
+
+.auth-navbar-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.auth-nav-button {
+    min-height: 44px;
+
+    padding:
+        0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769e8,
+            #2558dc
+        );
+
+    color: #ffffff !important;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 7px 17px
+        rgba(37, 88, 220, 0.20);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.auth-nav-button:hover {
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(37, 88, 220, 0.26);
+}
+
+
+/* =========================================================
+   MAIN DESKTOP
+   ========================================================= */
+
+.auth-main {
+    width: 100%;
+    max-width: 1360px;
+
+    margin: 0 auto;
+
+    padding:
+        24px
+        30px
+        28px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(450px, 500px);
+
+    gap: 26px;
+
+    align-items: stretch;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   LEFT BANK PANEL
+   ========================================================= */
+
+.auth-about {
+    width: 100%;
+
+    height: 100%;
+    min-height: 640px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    border-radius: 26px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255,255,255,0.14),
+            transparent 27%
+        ),
+        linear-gradient(
+            145deg,
+            #1769e8 0%,
+            #1464df 52%,
+            #1555bd 100%
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 38px
+        rgba(20, 72, 145, 0.16);
+}
+
+
+/* decorative circles */
+
+.auth-about::before {
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    top: -185px;
+    right: -125px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    box-shadow:
+        0 0 0 42px
+        rgba(255,255,255,0.035),
+
+        0 0 0 84px
+        rgba(255,255,255,0.025);
+}
+
+
+.auth-about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    left: -145px;
+    bottom: -145px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+}
+
+
+/* content stays above decoration */
+
+.auth-about-content {
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LARGE BANK LOGO
+   ========================================================= */
+
+.auth-logo-large {
+    width: 76px;
+    height: 76px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid
+        var(--peb-gold);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1769da,
+            #1552aa
+        );
+
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BANK HEADING
+   ========================================================= */
+
+.auth-about h1 {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #ffffff;
+
+    font-size: 44px;
+
+    font-weight: 800;
+
+    line-height: 0.99;
+
+    letter-spacing: -1.3px;
+}
+
+
+.auth-about h1 span {
+    margin-top: 5px;
+}
+
+
+.auth-about-tagline {
+    margin:
+        17px 0 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.auth-about-line {
+    width: 65px;
+    height: 3px;
+
+    margin:
+        16px 0;
+
+    border-radius: 5px;
+
+    background:
+        var(--peb-gold);
+}
+
+
+.auth-about-description {
+    max-width: 600px;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.92);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.auth-features {
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 11px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.auth-feature {
+    min-width: 0;
+
+    min-height: 125px;
+
+    padding:
+        16px
+        13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.09);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+}
+
+
+.auth-feature-icon {
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.14);
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+.auth-feature h3 {
+    margin:
+        0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.auth-feature p {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.76);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   REGISTER / LOGIN CARD
+   ========================================================= */
+
+.auth-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding:
+        28px
+        30px
+        24px;
+
+    box-sizing: border-box;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,0.98);
+
+    border:
+        1px solid
+        rgba(22,58,99,0.07);
+
+    box-shadow:
+        0 14px 34px
+        rgba(30,58,95,0.11);
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.auth-card-header {
+    text-align: center;
+
+    margin-bottom: 19px;
+}
+
+
+.auth-card-header h2 {
+    margin: 0;
+
+    color: #10213a;
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+.auth-card-header p {
+    margin:
+        7px 0 0;
+
+    color: #71839d;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.auth-form {
+    width: 100%;
+}
+
+
+.auth-input-field {
+    width: 100%;
+
+    margin-bottom: 11px;
+}
+
+
+.auth-input-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #17253b;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.auth-input-wrapper {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border:
+        1px solid #d9e1ec;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+.auth-input-icon {
+    width: 45px;
+    min-width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
+    color: #66758b;
+
+    border-right:
+        1px solid #e3e8ef;
+
+    font-size: 14px;
+}
+
+
+.auth-input {
+    flex: 1 1 auto;
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 46px;
+
+    padding:
+        0 13px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--peb-text);
+
+    font-size: 13px;
+}
+
+
+.auth-input::placeholder {
+    color: #9aa7b8;
+}
+
+
+/* password */
+
+.auth-password-wrapper {
+    position: relative;
+}
+
+
+.auth-password-wrapper .auth-input {
+    padding-right: 45px;
+}
+
+
+.auth-password-toggle {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 45px !important;
+    min-width: 45px;
+
+    height: 46px;
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 !important;
+
+    border: none !important;
+
+    background: transparent !important;
+
+    color: #718096;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.auth-card .btn,
+.auth-card button[type="submit"] {
+    width: 100%;
+
+    min-height: 50px;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   SECONDARY
+   ========================================================= */
+
+.auth-secondary {
+    margin-top: 14px;
+
+    text-align: center;
+
+    color: #71839d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.auth-secondary-row {
+    margin-top: 3px;
+}
+
+
+.auth-secondary a {
+    color: #0868ed;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MOBILE BACK BUTTON
+   ========================================================= */
+
+.mobile-back-button {
+    display: none;
+
+    border: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: var(--peb-blue);
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE LOGIN ICON
+   ========================================================= */
+
+.mobile-login-icon {
+    display: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.auth-footer {
+    width: 100%;
+
+    min-height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        10px 20px;
+
+    color: #71829a;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.45);
+
+    border-top:
+        1px solid
+        rgba(22,58,99,0.05);
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) and (min-width: 768px) {
+
+    .auth-navbar {
+        height: 70px;
+        min-height: 70px;
+
+        padding:
+            9px 25px;
+    }
+
+
+    .auth-page {
+        padding-top: 70px;
+    }
+
+
+    .auth-main {
+        max-width: 1160px;
+
+        padding:
+            20px 22px 24px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            450px;
+
+        gap: 22px;
+    }
+
+
+    .auth-about {
+        min-height: 590px;
+
+        padding: 32px;
+    }
+
+
+    .auth-logo-large {
+        width: 68px;
+        height: 68px;
+
+        margin-bottom: 19px;
+    }
+
+
+    .auth-about h1 {
+        font-size: 38px;
+    }
+
+
+    .auth-about-description {
+        font-size: 13px;
+    }
+
+
+    .auth-feature {
+        min-height: 112px;
+
+        padding:
+            13px 11px;
+    }
+
+
+    .auth-card {
+        max-width: 450px;
+
+        padding:
+            25px
+            26px
+            22px;
+    }
+
+
+    .auth-card-header h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) and (min-width: 768px) {
+
+    .auth-main {
+        max-width: 720px;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .auth-about {
+        min-height: auto;
+
+        padding: 32px;
+    }
+
+
+    .auth-card {
+        max-width: 560px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body,
+    #root {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    /* -------------------------
+       PAGE
+       ------------------------- */
+
+    .auth-page {
+        width: 100%;
+
+        min-height: 100svh;
+
+        padding-top: 60px;
+
+        overflow-x: hidden;
+    }
+
+
+    /* -------------------------
+       FIXED MOBILE NAVBAR
+       ------------------------- */
+
+    .auth-navbar {
+        width: 100%;
+
+        height: 60px;
+        min-height: 60px;
+
+        padding:
+            7px 10px;
+
+        position: fixed !important;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 99999;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+
+    .auth-brand {
+        min-width: 0;
+
+        gap: 7px;
+
+        flex: 1 1 auto;
+    }
+
+
+    .auth-brand-logo {
+        width: 37px;
+        height: 37px;
+
+        min-width: 37px;
+
+        border-radius: 9px;
+
+        font-size: 12px;
+    }
+
+
+    .auth-brand-text {
+        min-width: 0;
+    }
+
+
+    .auth-brand-name {
+        max-width: 165px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+
+        font-size: 12px;
+    }
+
+
+    .auth-brand-tagline {
+        display: none !important;
+    }
+
+
+    .auth-navbar-actions {
+        flex-shrink: 0;
+
+        margin-left: auto;
+    }
+
+
+    .auth-nav-button {
+        min-height: 35px;
+
+        padding:
+            0 11px;
+
+        border-radius: 9px;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+    }
+
+
+    /* -------------------------
+       MAIN
+       ------------------------- */
+
+    .auth-main {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: auto;
+
+        margin: 0;
+
+        padding:
+            12px 10px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+
+    /* =====================================================
+       NORMAL MOBILE STATE
+       Bank welcome screen visible
+       ===================================================== */
+
+    .auth-main:not(.mobile-login-mode) {
+        min-height:
+            calc(100svh - 60px - 50px);
+
+        justify-content: center;
+    }
+
+
+    .auth-main:not(.mobile-login-mode) .auth-about {
+        display: flex;
+    }
+
+
+    .auth-main:not(.mobile-login-mode) .auth-card {
+        display: none;
+    }
+
+
+    /* =====================================================
+       MOBILE LOGIN / REGISTER STATE
+       ===================================================== */
+
+    .auth-main.mobile-login-mode {
+        justify-content: flex-start;
+    }
+
+
+    .auth-main.mobile-login-mode .auth-about {
+        display: none;
+    }
+
+
+    .auth-main.mobile-login-mode .auth-card {
+        display: block;
+    }
+
+
+    /* -------------------------
+       MOBILE BANK SCREEN
+       ------------------------- */
+
+    .auth-about {
+        width: 100%;
+
+        min-height: auto;
+        height: auto;
+
+        padding:
+            27px 17px;
+
+        border-radius: 20px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .auth-about-content {
+        width: 100%;
+        max-width: 500px;
+    }
+
+
+    .auth-logo-large {
+        width: 62px;
+        height: 62px;
+
+        margin:
+            0 auto
+            17px;
+
+        border-radius: 16px;
+
+        font-size: 21px;
+    }
+
+
+    .auth-about h1 {
+        font-size: 27px;
+
+        line-height: 1.05;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .auth-about h1 span {
+        margin-top: 4px;
+    }
+
+
+    .auth-about-tagline {
+        margin-top: 10px;
+
+        font-size: 12px;
+    }
+
+
+    .auth-about-line {
+        width: 50px;
+        height: 2px;
+
+        margin:
+            15px auto;
+    }
+
+
+    .auth-about-description {
+        max-width: 360px;
+
+        margin: 0 auto;
+
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+
+    /* -------------------------
+       MOBILE FEATURES
+       ------------------------- */
+
+    .auth-features {
+        width: 100%;
+
+        margin-top: 20px;
+        padding-top: 0;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+
+    .auth-feature {
+        min-height: 80px;
+
+        padding:
+            9px 5px;
+
+        border-radius: 10px;
+
+        text-align: left;
+    }
+
+
+    .auth-feature-icon {
+        width: 29px;
+        height: 29px;
+
+        margin-bottom: 6px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .auth-feature h3 {
+        margin-bottom: 0;
+
+        font-size: 9px;
+
+        line-height: 1.2;
+    }
+
+
+    .auth-feature p {
+        display: none;
+    }
+
+
+    /* -------------------------
+       MOBILE REGISTER CARD
+       ------------------------- */
+
+    .auth-card {
+        width: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding:
+            21px 15px 19px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 12px 30px
+            rgba(30,58,95,0.12);
+    }
+
+
+    .auth-card-header {
+        margin-bottom: 19px;
+    }
+
+
+    .auth-card-header h2 {
+        font-size: 22px;
+
+        line-height: 1.15;
+    }
+
+
+    .auth-card-header p {
+        max-width: 290px;
+
+        margin:
+            6px auto 0;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    /* -------------------------
+       BACK BUTTON
+       ------------------------- */
+
+    .mobile-back-button {
+        display: inline-flex !important;
+
+        align-items: center;
+
+        gap: 4px;
+
+        margin-bottom: 15px;
+
+        width: auto !important;
+
+        min-height: auto !important;
+
+        font-size: 10px;
+    }
+
+
+    /* -------------------------
+       INPUTS
+       ------------------------- */
+
+    .auth-form {
+        width: 100% !important;
+    }
+
+
+    .auth-input-field {
+        width: 100% !important;
+
+        margin-bottom: 11px;
+    }
+
+
+    .auth-input-label {
+        margin-bottom: 4px;
+
+        font-size: 10px;
+    }
+
+
+    .auth-input-wrapper {
+        width: 100% !important;
+
+        min-height: 45px;
+
+        height: 45px;
+    }
+
+
+    .auth-input-icon {
+        width: 39px !important;
+        min-width: 39px !important;
+
+        font-size: 12px;
+    }
+
+
+    .auth-input {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 43px;
+
+        padding:
+            0 9px;
+
+        font-size: 11px;
+    }
+
+
+    .auth-password-wrapper .auth-input {
+        padding-right: 39px;
+    }
+
+
+    .auth-password-toggle {
+        width: 39px !important;
+        min-width: 39px !important;
+
+        height: 43px;
+    }
+
+
+    /* -------------------------
+       MOBILE SUBMIT BUTTON
+       ------------------------- */
+
+    .auth-card .btn,
+    .auth-card button[type="submit"] {
+        width: 100% !important;
+
+        min-height: 46px;
+
+        border-radius: 11px;
+
+        font-size: 13px;
+    }
+
+
+    /* -------------------------
+       SECONDARY LINK
+       ------------------------- */
+
+    .auth-secondary {
+        margin-top: 12px;
+
+        font-size: 10px;
+    }
+
+
+    .auth-secondary-row {
+        margin-top: 2px;
+    }
+
+
+    .auth-secondary a {
+        font-size: 14px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    .auth-footer {
+        min-height: 50px;
+
+        padding:
+            10px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .auth-navbar {
+        height: 58px;
+        min-height: 58px;
+
+        padding:
+            6px 9px;
+    }
+
+
+    .auth-page {
+        padding-top: 58px;
+    }
+
+
+    .auth-brand-logo {
+        width: 35px;
+        height: 35px;
+
+        min-width: 35px;
+    }
+
+
+    .auth-brand-name {
+        max-width: 145px;
+
+        font-size: 11px;
+    }
+
+
+    .auth-nav-button {
+        min-height: 33px;
+
+        padding:
+            0 9px;
+
+        font-size: 9px;
+    }
+
+
+    .auth-main {
+        padding:
+            10px 8px 18px;
+    }
+
+
+    .auth-card {
+        padding:
+            19px 13px 17px;
+    }
+
+
+    .auth-card-header h2 {
+        font-size: 21px;
+    }
+
+
+    .auth-input-label {
+        font-size: 9px;
+    }
+
+
+    .auth-input-wrapper {
+        height: 43px;
+        min-height: 43px;
+    }
+
+
+    .auth-input {
+        height: 41px;
+
+        font-size: 10px;
+    }
+}
+

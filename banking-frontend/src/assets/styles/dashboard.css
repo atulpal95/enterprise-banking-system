@@ -1,0 +1,860 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* =========================================================
+   DASHBOARD MAIN LAYOUT
+========================================================= */
+
+.dashboard-layout {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    background: #f4f7fc;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.dashboard-main {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+   ONLY THIS AREA SCROLLS
+========================================================= */
+
+.dashboard-content {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 30px;
+
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 992px) {
+    .dashboard-content {
+        padding: 24px;
+    }
+}
+
+
+
+
+/* =========================================================
+   DASHBOARD CONTENT SCROLLBAR
+========================================================= */
+
+.dashboard-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 24px;
+
+    margin: 30px 0;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.dashboard-card {
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    border: 1px solid #edf2f7;
+
+    min-width: 0;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    margin: 0;
+
+    font-size: 21px;
+
+    font-weight: 650;
+
+    color: #0f172a;
+}
+
+.card-header span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.chart-wrapper {
+    width: 100%;
+    height: 350px;
+
+    min-width: 0;
+    min-height: 0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+.chart-empty-state {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+/* =========================================================
+   LOGIN UI
+========================================================= */
+
+.login-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    font-size: 30px;
+
+    font-weight: 650;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOGIN DIVIDER
+========================================================= */
+
+.login-divider {
+    display: flex;
+
+    align-items: center;
+
+    margin: 30px 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+.login-divider span {
+    margin: 0 15px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   REGISTER LINK
+========================================================= */
+
+.register-link {
+    text-align: center;
+}
+
+.register-link span {
+    display: block;
+
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+.register-link a {
+    color: #2563eb;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   OTP VERIFICATION
+========================================================= */
+
+.auth-card {
+    width: min(450px, 100%);
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   OTP CONTAINER
+========================================================= */
+
+.otp-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin: 35px 0;
+}
+
+.otp-input {
+    width: 58px;
+
+    height: 65px;
+
+    border: 2px solid #dbe3ec;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    font-size: 21px;
+
+    font-weight: 650;
+
+    transition: 0.3s;
+
+    outline: none;
+}
+
+.otp-input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.15);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   OTP FOOTER
+========================================================= */
+
+.otp-footer {
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+.otp-footer span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.resend-btn {
+    border: none;
+
+    background: none;
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.resend-btn:hover {
+    color: #1d4ed8;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .dashboard-content {
+        padding: 24px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    
+
+    .dashboard-card {
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+    .card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .card-header h3 {
+        font-size: 20px;
+    }
+
+    .chart-wrapper {
+        height: 280px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .dashboard-content {
+        padding: 14px;
+    }
+
+   
+
+    .dashboard-card {
+        padding: 16px;
+
+        border-radius: 14px;
+    }
+
+    .chart-wrapper {
+        height: 240px;
+    }
+
+    .auth-card {
+        width: 100%;
+
+        padding: 25px;
+
+        border-radius: 16px;
+    }
+
+    .otp-container {
+        gap: 8px;
+
+        margin: 25px 0;
+    }
+
+    .otp-input {
+        width: 46px;
+
+        height: 56px;
+
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .dashboard-content {
+        padding: 10px;
+    }
+
+   
+
+    .dashboard-card {
+        padding: 14px;
+    }
+
+    .card-header h3 {
+        font-size: 18px;
+    }
+
+    .chart-wrapper {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .dashboard-content {
+        padding: 8px;
+    }
+
+    
+
+    .dashboard-card {
+        padding: 12px;
+    }
+
+    .otp-container {
+        gap: 5px;
+    }
+
+    .otp-input {
+        width: 40px;
+
+        height: 50px;
+
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL 100% ZOOM / DESKTOP WIDTH SAFETY
+   Base design is desktop-first. These rules prevent child
+   components from creating horizontal overflow at 100% zoom.
+========================================================= */
+
+.dashboard-content > * {
+    max-width: 100%;
+}
+
+.customer-dashboard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.dashboard-grid,
+.summary-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.dashboard-grid > *,
+.summary-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.dashboard-card {
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media (min-width: 993px) {
+    .dashboard-content {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .dashboard-content {
+        padding: 24px;
+    }
+}
+
+/* ==========================================
+   CHART MOBILE FIX
+========================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-grid {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dashboard-grid > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dashboard-card {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .chart-wrapper {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+}
+
+/* =========================================================
+   PAL BANK - FINAL 100% ZOOM / RESPONSIVE LAYOUT FIX
+   Keeps the existing visual design and only controls sizing.
+========================================================= */
+
+.dashboard-layout,
+.dashboard-main,
+.dashboard-content,
+.customer-dashboard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.dashboard-layout {
+    overflow: hidden;
+}
+
+.dashboard-main {
+    overflow: hidden;
+}
+
+.dashboard-content {
+    overflow-x: hidden;
+}
+
+/* Every direct page child must respect the available width. */
+.dashboard-content > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* =========================================================
+   DESKTOP 993px+
+========================================================= */
+@media (min-width: 993px) {
+    .dashboard-content {
+        padding: 30px;
+    }
+
+    .summary-grid {
+        width: 100%;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .dashboard-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+        gap: 24px;
+    }
+
+    .summary-grid > *,
+    .dashboard-grid > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .dashboard-card {
+     min-width: 0;
+     max-width: 100%;
+    }
+}
+
+/* =========================================================
+   LAPTOP / TABLET 769px - 992px
+========================================================= */
+@media (min-width: 769px) and (max-width: 992px) {
+    .dashboard-content {
+        padding: 24px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* =========================================================
+   MOBILE <= 768px
+========================================================= */
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .summary-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .dashboard-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .summary-grid > *,
+    .dashboard-grid > * {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .dashboard-card {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+     }
+
+    .chart-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    
+}
+
+/* =========================================================
+   SMALL MOBILE <= 576px
+========================================================= */
+@media (max-width: 576px) {
+    .dashboard-content {
+        padding: 14px;
+    }
+
+    .summary-grid {
+        gap: 14px;
+    }
+
+    .dashboard-grid {
+        gap: 16px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE <= 400px
+========================================================= */
+@media (max-width: 400px) {
+    .dashboard-content {
+        padding: 10px;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE <= 360px
+========================================================= */
+@media (max-width: 360px) {
+    .dashboard-content {
+        padding: 8px;
+    }
+}
+
+/* =========================================================
+   FINAL NAVBAR WRAP SAFETY
+   Must stay ABOVE the dashboard content on desktop/laptop.
+========================================================= */
+
+.dashboard-main > .navbar {
+    flex-wrap: nowrap !important;
+}
+
+@media (min-width: 769px) {
+    .dashboard-main > .navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .dashboard-main > .navbar .navbar-left {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .dashboard-main > .navbar .navbar-search {
+        flex: 0 1 420px !important;
+        min-width: 220px !important;
+    }
+
+    .dashboard-main > .navbar .navbar-right {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-main > .navbar {
+        flex-wrap: nowrap !important;
+    }
+}
