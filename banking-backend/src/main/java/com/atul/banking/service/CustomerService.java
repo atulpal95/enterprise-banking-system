@@ -145,39 +145,52 @@ try {
 }
 
 }
-    public LoginResponse loginCustomer(LoginRequest loginRequest) {
+   public LoginResponse loginCustomer(LoginRequest loginRequest) {
 
-        Customer customer = customerRepository.findByEmail(loginRequest.getEmail())
-                .orElseThrow(() -> new RuntimeException("Customer not found."));
+    Customer customer = customerRepository.findByEmail(loginRequest.getEmail())
+            .orElseThrow(() -> new RuntimeException("Customer not found."));
 
-        if (!customer.isActive()) {
-            throw new RuntimeException("Your account has been blocked by Admin.");
-        }
+    if (!customer.isActive()) {
+        throw new RuntimeException("Your account has been blocked by Admin.");
+    }
 
-        if (!passwordEncoder.matches(loginRequest.getPassword(), customer.getPassword())) {
-            throw new RuntimeException("Invalid password.");
-        }
+    if (!passwordEncoder.matches(
+            loginRequest.getPassword(),
+            customer.getPassword())) {
 
-        // Generate JWT
-        String token = jwtService.generateToken(customer.getEmail());
+        throw new RuntimeException("Invalid password.");
+    }
+
+    // Generate JWT
+    String token = jwtService.generateToken(customer.getEmail());
+
+    // Login must not fail if email delivery fails
+    try {
         emailService.sendLoginAlertEmail(
                 customer.getEmail(),
                 customer.getFullName(),
                 LocalDateTime.now().toString(),
                 "Unknown"
         );
+    } catch (RuntimeException e) {
 
-        return new LoginResponse(
-                customer.getId(),
-                "Login Successful",
-                token,
-                customer.getFullName(),
-                customer.getEmail(),
-                customer.getBalance()
-
-        );
+        org.slf4j.LoggerFactory.getLogger(CustomerService.class)
+                .warn(
+                        "Login alert email failed for customer id {}",
+                        customer.getId(),
+                        e
+                );
     }
 
+    return new LoginResponse(
+            customer.getId(),
+            "Login Successful",
+            token,
+            customer.getFullName(),
+            customer.getEmail(),
+            customer.getBalance()
+    );
+}
   private void verifyBankingEligibility(Customer customer) {
 
     if (!customer.isActive()) {
