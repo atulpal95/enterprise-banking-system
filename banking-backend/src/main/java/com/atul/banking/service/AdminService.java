@@ -19,16 +19,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import com.atul.banking.entity.ChequeBookRequest;
 import com.atul.banking.entity.Loan;
-import com.atul.banking.repository.LoanRepository;
-import com.atul.banking.dto.LoanResponse;
-import com.atul.banking.dto.FDAdminResponse;
 
 import java.util.Map;
 import com.atul.banking.entity.FixedDeposit;
-import com.atul.banking.dto.RejectFDRequest;
-
-import com.atul.banking.repository.RecurringDepositRepository;
-import com.atul.banking.dto.RDAdminResponse;
 import com.atul.banking.entity.RecurringDeposit;
 
 import com.atul.banking.dto.analytics.DashboardAnalyticsResponse;
@@ -63,9 +56,6 @@ import com.atul.banking.report.TransactionExcelReportService;
 import com.atul.banking.entity.ATMCard;
 import java.util.Random;
 
-import com.atul.banking.dto.AdminChangePasswordRequest;
-import com.atul.banking.dto.AdminProfileResponse;
-import com.atul.banking.dto.AdminUpdateProfileRequest;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -623,19 +613,25 @@ public AdminCustomerDetailsResponse getCustomerDetails(Long id) {
             );
         }
 
-        customer.setAccountStatus("ACTIVE");
+       customer.setAccountStatus("ACTIVE");
 
-        customerRepository.save(customer);
+customerRepository.save(customer);
 
-        emailService.sendAccountApprovedEmail(
+try {
+    emailService.sendAccountApprovedEmail(
             customer.getEmail(),
             customer.getFullName()
-        );
+    );
+} catch (RuntimeException e) {
+    // Approval should not fail just because email delivery failed.
+    org.slf4j.LoggerFactory.getLogger(AdminService.class)
+            .warn("Account approval email failed for customer id {}", id, e);
+}
 
-        return new MessageResponse(
-                "Customer account approved successfully."
-        );
-    }
+return new MessageResponse(
+        "Customer account approved successfully."
+);
+}
 
 
 // =====================================================
