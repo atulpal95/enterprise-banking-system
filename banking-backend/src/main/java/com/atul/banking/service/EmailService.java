@@ -9,6 +9,11 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import com.atul.banking.util.EmailTemplateBuilder;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.resend.Resend;
+import com.resend.core.exception.ResendException;
+import com.resend.services.emails.model.CreateEmailOptions;
 
 @Service
 public class EmailService {
@@ -16,21 +21,35 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
+    @Value("${RESEND_API_KEY:}")
+     private String resendApiKey;
+
+    @Value("${RESEND_FROM:onboarding@resend.dev}")
+     private String resendFrom;
+
     // =========================================
     // Common Email Sender
     // =========================================
 
-    private void sendEmail(String to, String subject, String body) {
+    private void sendHtmlEmail(String to, String subject, String htmlContent) {
 
-        SimpleMailMessage message = new SimpleMailMessage();
+    try {
 
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(body);
+        Resend resend = new Resend(resendApiKey);
 
-        mailSender.send(message);
+        CreateEmailOptions params = CreateEmailOptions.builder()
+                .from(resendFrom)
+                .to(to)
+                .subject(subject)
+                .html(htmlContent)
+                .build();
+
+        resend.emails().send(params);
+
+    } catch (ResendException e) {
+        throw new RuntimeException("Failed to send email", e);
     }
-
+}
     // =========================================
     // OTP Email
     // =========================================
@@ -2423,33 +2442,6 @@ public void sendAdminPasswordResetEmail(
                 "Large Transaction Alert",
                 html
         );
-    }
-
-    private void sendHtmlEmail(
-            String toEmail,
-            String subject,
-            String htmlContent) {
-
-        try {
-
-            MimeMessage message = mailSender.createMimeMessage();
-
-            MimeMessageHelper helper =
-                    new MimeMessageHelper(message, true, "UTF-8");
-
-            helper.setTo(toEmail);
-            helper.setSubject(subject);
-            helper.setText(htmlContent, true);
-
-            mailSender.send(message);
-
-        } catch (MessagingException e) {
-
-            throw new RuntimeException(
-                    "Unable to send email.",
-                    e
-            );
-        }
     }
 
     private String escapeHtml(String value) {
