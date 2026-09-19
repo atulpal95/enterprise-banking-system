@@ -631,15 +631,24 @@ public KYCResponse submitKYCWithDocuments(
     customerRepository.save(customer);
 
     KYC savedKYC =
-            kycRepository.save(kyc);
+        kycRepository.save(kyc);
 
-            emailService.sendKYCSubmittedEmail(
-        customer.getEmail(),
-        customer.getFullName(),
-        kyc.getDocumentType()
-);
+try {
+    emailService.sendKYCSubmittedEmail(
+            customer.getEmail(),
+            customer.getFullName(),
+            kyc.getDocumentType()
+    );
+} catch (RuntimeException e) {
+    org.slf4j.LoggerFactory.getLogger(CustomerService.class)
+            .warn(
+                    "KYC submission email failed for customer id {}",
+                    customer.getId(),
+                    e
+            );
+}
 
-    return mapToResponse(savedKYC);
+return mapToResponse(savedKYC);
 }
 
     private KYCResponse mapToResponse(KYC kyc) {
