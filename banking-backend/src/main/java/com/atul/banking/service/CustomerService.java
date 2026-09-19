@@ -1,7 +1,6 @@
 
 package com.atul.banking.service;
 import com.atul.banking.entity.KYC;
-import com.atul.banking.repository.KYCRepository;
 import com.atul.banking.entity.ATMCard;
 import com.atul.banking.repository.*;
 
@@ -15,7 +14,7 @@ import com.atul.banking.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.atul.banking.dto.ChequeBookRequestDto;
+
 import com.atul.banking.entity.Transaction;
 
 import java.time.LocalDateTime;
@@ -29,7 +28,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.UUID;
-import com.atul.banking.dto.RegisterRequest;
+
 import com.atul.banking.config.FileStorageConfig;
 import com.atul.banking.entity.ChequeBookRequest;
 
@@ -40,19 +39,12 @@ import java.util.ArrayList;
 import com.atul.banking.entity.Loan;
 
 import com.atul.banking.entity.FixedDeposit;
-import com.atul.banking.dto.FDResponse;
-import com.atul.banking.dto.OpenFDRequest;
-
-import com.atul.banking.repository.RecurringDepositRepository;
-import com.atul.banking.dto.OpenRDRequest;
-import com.atul.banking.dto.RDResponse;
 import com.atul.banking.entity.RecurringDeposit;
 
 import java.io.ByteArrayInputStream;
 
 import java.io.InputStream;
 import javax.imageio.ImageIO;
-import com.atul.banking.dto.StatementTransaction;
 
 import com.atul.banking.util.StatementPdfGenerator;
 
@@ -136,15 +128,21 @@ public class CustomerService {
 
     customer.setIfscCode(generateIFSC());
 
-    customer.setAccountStatus("PENDING");
-    customer.setKycStatus("NOT_SUBMITTED");
-
     Customer savedCustomer = customerRepository.save(customer);
 
+try {
     emailService.sendWelcomeEmail(
             savedCustomer.getEmail(),
             savedCustomer.getFullName()
     );
+} catch (RuntimeException e) {
+    org.slf4j.LoggerFactory.getLogger(CustomerService.class)
+            .warn(
+                    "Welcome email failed for customer id {}",
+                    savedCustomer.getId(),
+                    e
+            );
+}
 
 }
     public LoginResponse loginCustomer(LoginRequest loginRequest) {
